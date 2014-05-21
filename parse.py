@@ -7,6 +7,7 @@ To use:
     - Run "python parse.py"
 
 """
+from __future__ import division
 
 import os
 import re
@@ -88,5 +89,8 @@ if __name__ == '__main__':
         relative_chords.append(get_relative(tonic, chords))
 
     chord_counts, transition_counts = get_overall_counts(relative_chords)
-    for k, v in chord_counts.items():
-        print RN[k], '\t', v
+
+    # transistion probabilities
+    for (first, second), count in transition_counts.items():
+        probability = transition_counts[(first, second)] / chord_counts[first]
+        print '{} -> {}:\t{}'.format(RN[first], RN[second], probability)
