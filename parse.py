@@ -16,6 +16,7 @@ from collections import defaultdict, deque
 ROOT_DIR = 'McGill-Billboard'
 
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
+RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
 
 def lookup_chord(key, key_list):
     """Look up the numerical position of a chord root relative to an ordered list of roots (possibly shifted)."""
@@ -88,4 +89,4 @@ if __name__ == '__main__':
 
     chord_counts, transition_counts = get_overall_counts(relative_chords)
     for k, v in chord_counts.items():
-        print k, '\t', v
+        print RN[k], '\t', v
