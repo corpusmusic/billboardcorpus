@@ -2,8 +2,9 @@
 This file contains some ideas about how to start playing with the Billboard corpus.
 We don't necessarily need to use it unless it proves useful.
 
-To use: put this file as in the same directory as the downloaded "McGill-Billboard"
-directory. Run "python parse.py"
+To use:
+    - Copy the directory "McGill-Billboard" (the downloaded salami files) into this directory
+    - Run "python parse.py"
 
 """
 
