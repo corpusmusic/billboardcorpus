@@ -17,7 +17,10 @@ from collections import defaultdict, deque
 
 ROOT_DIR = 'McGill-Billboard'
 
+# KEYS dictionary is used to find the relative roots
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
+
+# RN (Roman Numerals) dictionary is used to convert from integer format to roman numerals format
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
 
 def lookup_chord(key, key_list):
@@ -45,25 +48,6 @@ def get_chord_sequence(f):
         line = fs.readline()
     tonic = line[line.index(':') + 2:-1]
     return tonic, re.findall(r'\S+:\S+', fs.read())
-
-def get_overall_counts(chord_lists):
-    """
-    Return dictionaries with individual chord counts and transition counts. If
-    the same chord appears multiple times in a row, only the first is counted.
-
-    """
-    chord_counts = defaultdict(lambda: 0)
-    transition_counts = defaultdict(lambda: 0)
-    for chords in chord_lists:
-        length = len(chords)
-        for i in range(length-1):
-            if chords[i] != chords[i+1]:
-                transition = (chords[i], chords[i+1])
-                transition_counts[transition] += 1
-                chord_counts[chords[i]] += 1
-        if chords[length-1] != chords[length-2]:
-            chord_counts[chords[length-1]] += 1
-    return chord_counts, transition_counts
 
 def get_relative(tonic, chords):
     """
@@ -93,4 +77,6 @@ if __name__ == '__main__':
             relative_roots = get_relative(tonic, chords)
             for chord, root in zip(chords, relative_roots):
                 writer.writerow([chord, RN[root]])
+
+            # write an empty line between songs
             writer.writerow([])
