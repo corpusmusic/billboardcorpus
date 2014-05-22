@@ -1,6 +1,6 @@
 """
-This file contains some ideas about how to start playing with the Billboard corpus.
-We don't necessarily need to use it unless it proves useful.
+This file writes an example csv output of just chords and roots
+It is probably not correct totally, but gives a starting place for implementing the analysis algorithms
 
 To use:
     - Copy the directory "McGill-Billboard" (the downloaded salami files) into this directory
@@ -11,6 +11,7 @@ from __future__ import division
 
 import os
 import re
+import csv
 
 from collections import defaultdict, deque
 
@@ -82,15 +83,14 @@ def get_relative(tonic, chords):
     return relative_chords
 
 if __name__ == '__main__':
+    """Write an example csv to play with for the analysis code."""
     filenames = corpus_list(ROOT_DIR)
     relative_chords = []
-    for f in filenames:
-        tonic, chords = get_chord_sequence(f)
-        relative_chords.append(get_relative(tonic, chords))
-
-    chord_counts, transition_counts = get_overall_counts(relative_chords)
-
-    # transistion probabilities
-    for (first, second), count in transition_counts.items():
-        probability = transition_counts[(first, second)] / chord_counts[first]
-        print '{} -> {}:\t{}'.format(RN[first], RN[second], probability)
+    with open('example.csv', 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for song in filenames:
+            tonic, chords = get_chord_sequence(song)
+            relative_roots = get_relative(tonic, chords)
+            for chord, root in zip(chords, relative_roots):
+                writer.writerow([chord, RN[root]])
+            writer.writerow([])

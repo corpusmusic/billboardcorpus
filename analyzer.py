@@ -1,13 +1,27 @@
 from __future__ import division
 
 from collections import defaultdict
+from operator import itemgetter
+import csv
 
 ROOT_DIR = 'TODO'
 CSV_NAME = 'TODO'
 
-def read_data():
-    """Return a list of all paths to the parsed csv files, relative to the root directory of the project."""
-    return [os.path.join(* [ROOT_DIR, sub_dir, CSV_NAME]) for sub_dir in os.listdir(ROOT_DIR)]
+def read_data(filename):
+    corpus_list = []
+    song_list = []
+    with open(filename, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in reader:
+            if len(row) > 0:
+                chord, root = row
+                song_list.append(root)
+
+            # line break means start the next song
+            else:
+                corpus_list.append(song_list)
+                song_list = []
+    return corpus_list
 
 def get_overall_counts(chord_lists):
     """
@@ -41,5 +55,9 @@ def get_transition_probs(chord_counts, transition_counts):
     return probs
 
 if __name__ == '__main__':
-    for f in read_data():
-        pass
+    roots = read_data('example.csv')
+    chord_counts, transition_counts = get_overall_counts(roots)
+    transition_probs = get_transition_probs(chord_counts, transition_counts)
+
+    for transition, prob in sorted(transition_probs.items(), key=itemgetter(1), reverse=True):
+        print transition, '\t', prob
