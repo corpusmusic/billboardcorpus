@@ -4,10 +4,13 @@ from collections import defaultdict
 from operator import itemgetter
 import csv
 
-ROOT_DIR = 'TODO'
-CSV_NAME = 'TODO'
-
 def read_data(filename):
+    """
+    Return a list of lists where the inner lists are the chords for a song and
+    and the outer list is a list of songs. The specific data captured for each song
+    will change as the parser gets written.
+
+    """
     corpus_list = []
     song_list = []
     with open(filename, 'rb') as csvfile:
