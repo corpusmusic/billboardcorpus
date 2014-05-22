@@ -17,7 +17,10 @@ from collections import defaultdict, deque
 
 ROOT_DIR = 'McGill-Billboard'
 
+# KEYS dictionary is used to find the relative roots
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
+
+# RN (Roman Numerals) dictionary is used to convert from integer format to roman numerals format
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
 
 def lookup_chord(key, key_list):
@@ -74,4 +77,6 @@ if __name__ == '__main__':
             relative_roots = get_relative(tonic, chords)
             for chord, root in zip(chords, relative_roots):
                 writer.writerow([chord, RN[root]])
+
+            # write an empty line between songs
             writer.writerow([])
