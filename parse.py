@@ -46,25 +46,6 @@ def get_chord_sequence(f):
     tonic = line[line.index(':') + 2:-1]
     return tonic, re.findall(r'\S+:\S+', fs.read())
 
-def get_overall_counts(chord_lists):
-    """
-    Return dictionaries with individual chord counts and transition counts. If
-    the same chord appears multiple times in a row, only the first is counted.
-
-    """
-    chord_counts = defaultdict(lambda: 0)
-    transition_counts = defaultdict(lambda: 0)
-    for chords in chord_lists:
-        length = len(chords)
-        for i in range(length-1):
-            if chords[i] != chords[i+1]:
-                transition = (chords[i], chords[i+1])
-                transition_counts[transition] += 1
-                chord_counts[chords[i]] += 1
-        if chords[length-1] != chords[length-2]:
-            chord_counts[chords[length-1]] += 1
-    return chord_counts, transition_counts
-
 def get_relative(tonic, chords):
     """
     Return a list of the relative root numbers based on the tonic note and
