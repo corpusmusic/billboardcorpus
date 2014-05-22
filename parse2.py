@@ -54,27 +54,65 @@ def get_relative(tonic, chords):
         relative_chords.append(RN[lookup_chord(root, shifted_keys)])
     return relative_chords
 
+def update_form(previous_form, line):
+	regex = re.compile("\w+,")
+	newform = regex.findall(line)
+	if newform:
+		return [newform[0].replace(",",""), newform[1].replace(",","")]
+	else:
+		return previous_form
+
+def get_chord_quality(chordList):
+	return [x.split(":")[1] for x in chordList]
+		
+
 if __name__ == '__main__':
     """Write an example csv to play with for the analysis code."""
     filenames = corpus_list(ROOT_DIR)
     relative_chords = []
-    for song in filenames:
-	Tonic = get_tonic(song)
-	fs=open(song)
-	for line in fs:
-		chordsInPhrase =  get_chord_sequence(line)			
-		relativeChords =  get_relative(Tonic,chordsInPhrase)
 
-		print chordsInPhrase
-		print relativeChords
-"""
     with open('example.csv', 'wb') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        for song in filenames:
-            tonic, chords = get_chord_sequence(song)
-            relative_roots = get_relative(tonic, chords)
-            for chord, root in zip(chords, relative_roots):
-                writer.writerow([chord, RN[root]])
-            writer.writerow([])
+	writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    	for song in filenames:
+	
+		Tonic = get_tonic(song)
+		fs=open(song)
+		formFunc = []
 
-"""
+		chordList = []
+		relativeChordList = []
+		barNumbers = []
+		totalBarNumbers = []
+		formFuncList = []
+		formLetterList = []
+		chordQualityList = []
+
+
+		for line in fs:
+			chordsInPhrase =  get_chord_sequence(line)			
+			relativeChords =  get_relative(Tonic,chordsInPhrase)
+
+			#need to change numbering to account for mult chords in 1 bar
+
+			barInPhrase = range(1, len(chordsInPhrase) + 1)		
+			totalInPhrase = [len(chordsInPhrase)]*len(chordsInPhrase)
+			phraseFormFunc = []
+			formLetter = [] 		
+			formFunc =  update_form(formFunc,line)
+			if formFunc: phraseFormFunc = [formFunc[1]]*len(chordsInPhrase)
+			if formFunc: formLetter = [formFunc[0]]*len(chordsInPhrase)
+			chordQualities = get_chord_quality(chordsInPhrase)	
+
+			chordList +=  chordsInPhrase
+			relativeChordList += relativeChords
+			barNumbers +=  barInPhrase
+			totalBarNumbers +=  totalInPhrase
+			formFuncList += phraseFormFunc
+			formLetterList += formLetter
+			chordQualityList += chordQualities
+		
+		for form, letter, chord, interval, quality, num, total in zip(formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers):
+			writer.writerow([form,letter,chord,interval,quality,num,total])
+		writer.writerow([]) 
+
+
