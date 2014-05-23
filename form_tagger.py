@@ -88,15 +88,16 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
 
 if __name__ == '__main__':
     datafile = '15SimpleSongs.csv'
-    headers = ['module', 'root', 'bar_of_phrase']
+    headers = ['module', 'root', 'bar_of_phrase', 'letter']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)
 
+    print states
     # for one, two in emission_probs:
     #     print '{}->{}: {:.4f}'.format(one, two, emission_probs[(one, two)])
 
-    for state in initial_probs:
-        print state, initial_probs[state]
+    # for state in initial_probs:
+    #     print state, initial_probs[state]
 
     # for song in data:
     #     obs = [entry['module'] for entry in song]
