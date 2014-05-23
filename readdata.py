@@ -12,7 +12,7 @@ def refine_form(song_list, has_chorus):
     """
     Implement some transformations on the module data from the corpus.
 
-    'verse' becomes 'stroph' if not chorus is present
+    'verse' becomes 'strophe' if not chorus is present
     'interlude' becomes 'intro' if not final, otherwise 'outro'
     'instrumental', 'solo' attempt to match with the letter of another form element
         if one is present, otherwise get '(unique_harmony)' appended
@@ -30,9 +30,9 @@ def refine_form(song_list, has_chorus):
     prev_module = None
     form_list = []
     for i, entry in enumerate(song_list):
-        # if there is no chorus, replace verse with stroph
+        # if there is no chorus, replace verse with strophe
         if not has_chorus and entry['module'] == 'verse':
-            entry['module'] = 'stroph'
+            entry['module'] = 'strophe'
 
         if entry['module'] != prev_module:
             form_list.append((i, entry['module'], entry['letter']))
