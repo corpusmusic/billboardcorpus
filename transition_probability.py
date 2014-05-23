@@ -4,19 +4,17 @@ from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
 
-def get_overall_counts(chords):
-    """
-    Return dictionaries with individual chord counts and transition counts. If
-    the same chord appears multiple times in a row, only the first is counted.
-
-    """
+def get_overall_counts(chord_lists):
+    """Return dictionaries with individual chord counts and transition counts."""
     chord_counts = defaultdict(lambda: 0)
     transition_counts = defaultdict(lambda: 0)
-    length = len(chords)
-    for i in range(length-1):
-        transition = (chords[i], chords[i+1])
-        transition_counts[transition] += 1
-        chord_counts[chords[i]] += 1
+    length = len(chord_lists)
+    for chords in chord_lists:
+        length = len(chords)
+        for i in range(length-1):
+            transition = (chords[i]['root'], chords[i+1]['root'])
+            transition_counts[transition] += 1
+            chord_counts[chords[i]['root']] += 1
     return chord_counts, transition_counts
 
 def get_transition_probs(chord_counts, transition_counts):
@@ -34,8 +32,8 @@ def get_transition_probs(chord_counts, transition_counts):
 if __name__ == '__main__':
     datafile = '15SimpleSongs.csv'
     headers = ['root']
-    roots = [entry['root'] for entry in read_data(datafile, headers, False)]
-    chord_counts, transition_counts = get_overall_counts(roots)
+    data = read_data(datafile, headers)
+    chord_counts, transition_counts = get_overall_counts(data)
     transition_probs = get_transition_probs(chord_counts, transition_counts)
 
     for transition, prob in sorted(transition_probs.items(), key=itemgetter(1), reverse=True):

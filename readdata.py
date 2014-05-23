@@ -8,15 +8,13 @@ import csv
 
 CSV_COLUMNS = ['module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bpm']
 
-def read_data(filename, col_names, separate_songs=True):
+def read_data(filename, col_names):
     """
     Return a list of usable data.
 
     Args:
-        filename: the name of the csv to read the data from. This has been output from the parser code.
+        filename: the name of the csv to read the data from. This is the output from the parser code.
         col_names: a list that is a subset of the CSV_COLUMNS list, indicating which columns to select.
-        separate_songs: a boolean value indicating whether or not to put data from individual songs
-            in sub-lists, or leave all the data in one long list.
 
     """
     corpus_list = []
@@ -26,13 +24,11 @@ def read_data(filename, col_names, separate_songs=True):
         for row in reader:
             if len(row) > 0:
                 entry = {k: v for k, v in zip(CSV_COLUMNS, row) if k in col_names}
-                if not separate_songs:
-                    corpus_list.append(entry)
-                else:
-                    song_list.append(entry)
+                song_list.append(entry)
 
             # line break means start the next song
-            elif separate_songs:
+            else:
                 corpus_list.append(song_list)
                 song_list = []
+
     return corpus_list
