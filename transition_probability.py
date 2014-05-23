@@ -8,7 +8,6 @@ def get_overall_counts(chord_lists):
     """Return dictionaries with individual chord counts and transition counts."""
     chord_counts = defaultdict(lambda: 0)
     transition_counts = defaultdict(lambda: 0)
-    length = len(chord_lists)
     for chords in chord_lists:
         length = len(chords)
         for i in range(length-1):
