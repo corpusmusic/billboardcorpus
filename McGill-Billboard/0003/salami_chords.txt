@@ -1,7 +1,7 @@
 # title: I Don't mind
 # artist: James Brown
 # metre: 6/8
-# tonic: C
+# tonic: A
 
 0.0	silence
 7.3469387e-2	A, intro, | A:min | A:min | C:maj | C:maj |
