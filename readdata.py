@@ -6,7 +6,7 @@ be used in all the analysis files, it is separated out here.
 
 import csv
 
-CSV_COLUMNS = ['module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bpm']
+CSV_COLUMNS = ['module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase']
 
 def read_data(filename, col_names):
     """
