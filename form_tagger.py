@@ -1,3 +1,9 @@
+"""
+This file attempts to run the Viterbi alogithm, using form information as the hidden
+states, and chord and position in phrase information as the observations.
+
+"""
+
 from __future__ import division
 
 from collections import defaultdict
@@ -5,6 +11,16 @@ from operator import itemgetter
 from readdata import read_data
 
 def get_probabilities(chord_list):
+    """
+    Return all parameters needed for viterbi.
+
+    Returns:
+        transition_probs: the probability of one hidden state going to another for all hidden states
+        emission_probs: the probability of seeing an observed state given the hidden state
+        initial_probs: the initial probability of starting in a given hidden state
+        states: a tuple containing all the hidden states in the data
+
+    """
     emission_counts = defaultdict(lambda: 0)
     module_counts = defaultdict(lambda: 0)
     transition_counts = defaultdict(lambda: 0)
@@ -17,7 +33,7 @@ def get_probabilities(chord_list):
                 transition = (chords[i-1]['module'], chords[i]['module'])
                 transition_counts[transition] += 1
 
-            emission = (chords[i]['module'], chords[i]['root'])
+            emission = (chords[i]['module'], '_'.join([chords[i]['root'], chords[i]['bar_of_phrase']]))
             emission_counts[emission] += 1
             module_counts[chords[i]['module']] += 1
 
@@ -36,6 +52,9 @@ def get_probabilities(chord_list):
 
     num_initial_states = sum(x for x in initial_counts.values())
     initial_probs = {k: v / num_initial_states for k, v in initial_counts.items()}
+    for s in states:
+        if s not in initial_probs:
+            initial_probs[s] = 0.0001
 
     return transition_probs, emission_probs, initial_probs, states
 
@@ -46,7 +65,7 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
 
     # Initialize base cases (t == 0)
     for y in states:
-        V[0][y] = start_p[y] * emit_p[y][obs[0]]
+        V[0][y] = start_p[y] * emit_p.get((y, obs[0]), 0.0001)
         path[y] = [y]
 
     # Run Viterbi for t > 0
@@ -55,7 +74,7 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
         newpath = {}
 
         for y in states:
-            (prob, state) = max((V[t-1][y0] * trans_p[y0][y] * emit_p[y][obs[t]], y0) for y0 in states)
+            (prob, state) = max((V[t-1][y0] * trans_p.get((y0, y), 0.0001) * emit_p.get((y, obs[t]), 0.0001), y0) for y0 in states)
             V[t][y] = prob
             newpath[y] = path[state] + [y]
 
@@ -69,7 +88,17 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
 
 if __name__ == '__main__':
     datafile = '15SimpleSongs.csv'
-    headers = ['module', 'root']
+    headers = ['module', 'root', 'bar_of_phrase']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)
-    print states
+
+    # for one, two in emission_probs:
+    #     print '{}->{}: {:.4f}'.format(one, two, emission_probs[(one, two)])
+
+    for state in initial_probs:
+        print state, initial_probs[state]
+
+    # for song in data:
+    #     obs = [entry['module'] for entry in song]
+    #     print viterbi(obs, states, initial_probs, transition_probs, emission_probs)
+    #     print # newline
