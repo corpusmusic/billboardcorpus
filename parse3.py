@@ -69,7 +69,6 @@ def main():
 					data.pop(0)
 					while data[0] is not "#":		#Get the title of the song
 						title = title + data.pop(0) + " "
-						# data.pop(0)
 					title = title[:-1]				#Remove leftover space in title
 
 				#Matched artist
@@ -86,18 +85,15 @@ def main():
 				#Matched tonic
 				elif re.match(r'tonic:', data[0]):	#Get tonic
 					data.pop(0)
-					tonic = data[0]
-					data.pop(0)
+					tonic = data.pop(0)
 
 				#Matched form content
 				elif re.match(r'[A-Z],', data[0]):	#Get form_content
-					form_content = data[0][:-1]
-					data.pop(0)
+					form_content = data.pop(0)[:-1]
 
 				#Matched form function
 				elif re.match(r'^[a-z]+-*[a-z]*,*$', data[0]): #Get form_function
-					form_function = data[0][:-1]
-					data.pop(0)
+					form_function = data.pop(0)[:-1]
 
 				#Matched bar
 				elif re.match(r'\|', data[0]):		#increment current bar count
@@ -106,27 +102,25 @@ def main():
 
 				#Matched chord
 				elif re.match(r'[A-G](b*|#*):.+', data[0]):
-					original_chord = data[0]						#Get the current chord
-					split_chord = re.split(r':', data[0])			#split chord and chord quality
+					original_chord = data.pop(0)					#Get the current chord
+					split_chord = re.split(r':', original_chord)	#split chord and chord quality
 					roman_chord = get_roman(tonic, split_chord[0]) 	#Convert chord to roman numeral
 					chord_quality = split_chord[1]					#Get chord quality
 
-					if re.match(r'->', data[2]):	#check for arrow (What is that called, again?)
+					if re.match(r'->', data[1]):	#check for arrow (What is that called, again?)
 						arrow = 1
 
 					#WRITE A CSV LINE
 					writer.writerow([title,form_content,form_function,original_chord,roman_chord,chord_quality,current_bar,total_bars, arrow])
-
-					data.pop(0)
 
 				#Matched . (Repeat previous chord)
 				elif re.match(r'^\.$', data[0]):
-					if re.match(r'->', data[2]):	#check for arrow (What is that called, again?)
+					data.pop(0)
+					if re.match(r'->', data[1]):	#check for arrow (What is that called, again?)
 						arrow = 1
 
 					#WRITE A CSV LINE
 					writer.writerow([title,form_content,form_function,original_chord,roman_chord,chord_quality,current_bar,total_bars, arrow])
-					data.pop(0)
 
 				#Matched time
 				elif re.match(r'(\d+\.\d+)',data[0]):
