@@ -1,7 +1,8 @@
 # title: Is That All There Is
 # artist: Peggy Lee
-# tonic: C
 # metre: 3/4
+# tonic: C
+
 
 0.0	silence
 0.75154195	Z
