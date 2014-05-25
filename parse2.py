@@ -6,7 +6,7 @@ import csv
 
 from collections import defaultdict, deque
 
-ROOT_DIR = 'McGill-BillboardSample'
+ROOT_DIR = 'McGill-BillboardSimple'
 
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
@@ -58,6 +58,8 @@ def update_form(previous_form, line):
 	regex = re.compile("\w+,")
 	newform = regex.findall(line)
 	if newform:
+		if len(newform) == 1:
+			newform.insert(0,"")
 		return [newform[0].replace(",",""), newform[1].replace(",","")]
 	else:
 		return previous_form
