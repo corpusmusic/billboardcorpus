@@ -6,7 +6,7 @@ import csv
 
 from collections import defaultdict, deque
 
-ROOT_DIR = 'McGill-BillboardSimple'
+ROOT_DIR = 'McGill-BillboardSample'
 
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
@@ -55,7 +55,7 @@ def get_relative(tonic, chords):
     return relative_chords
 
 def update_form(previous_form, line):
-	regex = re.compile("\w+,")
+	regex = re.compile("\w+,|\w+',")
 	newform = regex.findall(line)
 	if newform:
 		if len(newform) == 1:
@@ -86,7 +86,19 @@ def get_title(song):
         line = fs.readline()
     title = line[line.index(':') + 2:-1]
     return title
-	
+
+def get_arrow(line):
+	if "->" in line:
+		return 1
+	else:
+		return 0
+
+def get_repeats(line):
+	repeats = re.findall(r'x+\d',line)		
+	if repeats: 
+		return int(repeats[0][-1])	
+	else:
+		return 1
 
 if __name__ == '__main__':
     """Write an example csv to play with for the analysis code."""
@@ -97,11 +109,11 @@ if __name__ == '__main__':
 	writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     	for song in filenames:
 		                       
-		print get_title(song)
 		Tonic = get_tonic(song)
 		fs=open(song)
 		formFunc = []
-		
+	
+		arrowList = []	
 		titleList = []
 		chordList = []
 		relativeChordList = []
@@ -122,23 +134,26 @@ if __name__ == '__main__':
 			phraseFormFunc = []
 			formLetter = [] 		
 			formFunc =  update_form(formFunc,line)
+			print formFunc
 			if formFunc: phraseFormFunc = [formFunc[1]]*len(chordsInPhrase)
 			if formFunc: formLetter = [formFunc[0]]*len(chordsInPhrase)
 			chordQualities = get_chord_quality(chordsInPhrase)	
+			arrows = [0]*len(chordsInPhrase)
+			if arrows: arrows[-1] = get_arrow(line)
+			repeats = get_repeats(line)
 
+			titleList += title*repeats
+			chordList +=  chordsInPhrase*repeats
+			relativeChordList += relativeChords*repeats
+			barNumbers +=  barInPhrase*repeats
+			totalBarNumbers +=  totalInPhrase*repeats
+			formFuncList += phraseFormFunc*repeats
+			formLetterList += formLetter*repeats
+			chordQualityList += chordQualities*repeats
+			arrowList += arrows*repeats 	
 
-			titleList += title
-			chordList +=  chordsInPhrase
-			relativeChordList += relativeChords
-			barNumbers +=  barInPhrase
-			totalBarNumbers +=  totalInPhrase
-			formFuncList += phraseFormFunc
-			formLetterList += formLetter
-			chordQualityList += chordQualities
-		
-
-		for title, form, letter, chord, interval, quality, num, total in zip(titleList, formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers):
-			writer.writerow([title, form,letter,chord,interval,quality,num,total])
+		for title, form, letter, chord, interval, quality, num, total, arrows in zip(titleList, formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers,arrowList):
+			writer.writerow([title, form,letter,chord,interval,quality,num,total,arrows])
 		writer.writerow([]) 
 
 
