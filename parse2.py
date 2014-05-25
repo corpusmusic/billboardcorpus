@@ -66,7 +66,27 @@ def update_form(previous_form, line):
 
 def get_chord_quality(chordList):
 	return [x.split(":")[1] for x in chordList]
-		
+
+def get_bar_in_phrase(line):
+	barNumbersList = []
+	barlist =  line.split("|")[1:-1]	
+	for index, bar in enumerate(barlist):
+		chordsInBar = get_chord_sequence(bar)
+		barNumbersList += [index + 1]*len(chordsInBar)
+
+	return barNumbersList
+
+def get_total_bars(barNumbersList):
+	if barNumbersList: return barNumbersList[len(barNumbersList) -1]		
+
+def get_title(song):
+    fs = open(song)
+    line = fs.readline()
+    while 'title' not in line:
+        line = fs.readline()
+    title = line[line.index(':') + 2:-1]
+    return title
+	
 
 if __name__ == '__main__':
     """Write an example csv to play with for the analysis code."""
@@ -76,11 +96,13 @@ if __name__ == '__main__':
     with open('example.csv', 'wb') as csvfile:
 	writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     	for song in filenames:
-	
+		                       
+		print get_title(song)
 		Tonic = get_tonic(song)
 		fs=open(song)
 		formFunc = []
-
+		
+		titleList = []
 		chordList = []
 		relativeChordList = []
 		barNumbers = []
@@ -89,15 +111,14 @@ if __name__ == '__main__':
 		formLetterList = []
 		chordQualityList = []
 
-
 		for line in fs:
 			chordsInPhrase =  get_chord_sequence(line)			
 			relativeChords =  get_relative(Tonic,chordsInPhrase)
 
-			#need to change numbering to account for mult chords in 1 bar
-
-			barInPhrase = range(1, len(chordsInPhrase) + 1)		
-			totalInPhrase = [len(chordsInPhrase)]*len(chordsInPhrase)
+			
+ 			title = [get_title(song).replace(" ","")]*len(chordsInPhrase)
+			barInPhrase = get_bar_in_phrase(line)	
+			totalInPhrase = [get_total_bars(barInPhrase)]*len(chordsInPhrase)
 			phraseFormFunc = []
 			formLetter = [] 		
 			formFunc =  update_form(formFunc,line)
@@ -105,6 +126,8 @@ if __name__ == '__main__':
 			if formFunc: formLetter = [formFunc[0]]*len(chordsInPhrase)
 			chordQualities = get_chord_quality(chordsInPhrase)	
 
+
+			titleList += title
 			chordList +=  chordsInPhrase
 			relativeChordList += relativeChords
 			barNumbers +=  barInPhrase
@@ -113,8 +136,9 @@ if __name__ == '__main__':
 			formLetterList += formLetter
 			chordQualityList += chordQualities
 		
-		for form, letter, chord, interval, quality, num, total in zip(formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers):
-			writer.writerow([form,letter,chord,interval,quality,num,total])
+
+		for title, form, letter, chord, interval, quality, num, total in zip(titleList, formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers):
+			writer.writerow([title, form,letter,chord,interval,quality,num,total])
 		writer.writerow([]) 
 
 
