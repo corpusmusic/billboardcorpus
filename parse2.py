@@ -6,7 +6,7 @@ import csv
 
 from collections import defaultdict, deque
 
-ROOT_DIR = 'McGill-BillboardSample'
+ROOT_DIR = 'McGill-Billboard'
 
 KEYS = [{'A'}, {'A#', 'Bb'}, {'B', 'Cb'}, {'C'}, {'C#', 'Db'}, {'D'}, {'D#', 'Eb'}, {'E', 'Fb'}, {'F'}, {'F#', 'Gb'}, {'G'}, {'G#', 'Ab'}]
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII']
@@ -100,6 +100,12 @@ def get_repeats(line):
 	else:
 		return 1
 
+def update_key(line, tonic):
+	if "tonic:" in line:
+		tonic = line[line.index(':') + 2:-1]
+	return tonic
+		
+
 if __name__ == '__main__':
     """Write an example csv to play with for the analysis code."""
     filenames = corpus_list(ROOT_DIR)
@@ -126,7 +132,6 @@ if __name__ == '__main__':
 		for line in fs:
 			chordsInPhrase =  get_chord_sequence(line)			
 			relativeChords =  get_relative(Tonic,chordsInPhrase)
-
 			
  			title = [get_title(song).replace(" ","")]*len(chordsInPhrase)
 			barInPhrase = get_bar_in_phrase(line)	
@@ -134,13 +139,14 @@ if __name__ == '__main__':
 			phraseFormFunc = []
 			formLetter = [] 		
 			formFunc =  update_form(formFunc,line)
-			print formFunc
 			if formFunc: phraseFormFunc = [formFunc[1]]*len(chordsInPhrase)
 			if formFunc: formLetter = [formFunc[0]]*len(chordsInPhrase)
 			chordQualities = get_chord_quality(chordsInPhrase)	
 			arrows = [0]*len(chordsInPhrase)
 			if arrows: arrows[-1] = get_arrow(line)
 			repeats = get_repeats(line)
+
+			Tonic =  update_key(line,Tonic)
 
 			titleList += title*repeats
 			chordList +=  chordsInPhrase*repeats
