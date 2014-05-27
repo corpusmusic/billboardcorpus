@@ -61,7 +61,7 @@ def get_relative(tonic, chords):
 def update_form(previous_form, line):
 	if "title" in line or "artist" in line:
 		return previous_form
-	regex = re.compile("[a-z]+,|[A-Z]+',|[A-Z]+,|[a-z]+-+[a-z]+,|[a-z]+\s{1}[a-z]+,")
+	regex = re.compile("[a-z]+,|[A-Z]+'+,|[A-Z]+,|[a-z]+-+[a-z]+,|[a-z]+\s{1}[a-z]+,")
 	newform = regex.findall(line)
 	if newform:
 		if len(newform) == 1:
