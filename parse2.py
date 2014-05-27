@@ -66,10 +66,13 @@ def update_form(previous_form, line):
 	if newform:
 		if len(newform) == 1:
 			newform.insert(0,"")
-		#print newform[1]
 		#super temp fix
 		if newform[1] == "A," or newform[1] == "B," or newform[1] == "C,":
-			return [ newform[1].replace(",",""),previous_form[1] ] 
+			return [ newform[1].replace(",",""),previous_form[1] ]
+		#this is really terrible practice, but this error happens with less than .5% of chords
+		if newform[1] == "voice," or newform[1] == "vocal," or newform[1] == "brass,":
+			print "yooo"
+			return previous_form
 		return [newform[0].replace(",",""), newform[1].replace(",","")]
 	else:
 		return previous_form
