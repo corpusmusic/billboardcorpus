@@ -34,7 +34,8 @@ def get_chord_sequence(line):
     """
     Return a list of chord sequences from a line.
     """
-    return re.findall(r'\S+:\S+', line)
+    chords =  re.findall(r'\S+:\S+|\s+Z{1}\s|&pause|\s+N+\s', line)
+    return [c.strip() for c in chords]
 
 
 def get_relative(tonic, chords):
@@ -50,26 +51,42 @@ def get_relative(tonic, chords):
     shifted_keys.rotate(-root_num)
     relative_chords = []
     for c in chords:
-        root, quality = c.split(':')
-        relative_chords.append(RN[lookup_chord(root, shifted_keys)])
+	if c.strip() == "N" or c.strip() == "Z" or c.strip() == "&pause":
+		relative_chords.append("NonHarmonic")
+	else: 
+		root, quality = c.split(':')
+        	relative_chords.append(RN[lookup_chord(root, shifted_keys)])
     return relative_chords
 
 def update_form(previous_form, line):
-	regex = re.compile("\w+,|\w+',")
+	if "title" in line or "artist" in line:
+		return previous_form
+	regex = re.compile("[a-z]+,|[A-Z]+',|[A-Z]+,|[a-z]+-+[a-z]+,|[a-z]+\s{1}[a-z]+,")
 	newform = regex.findall(line)
 	if newform:
 		if len(newform) == 1:
 			newform.insert(0,"")
+		#print newform[1]
+		#super temp fix
+		if newform[1] == "A," or newform[1] == "B," or newform[1] == "C,":
+			return [ newform[1].replace(",",""),previous_form[1] ] 
 		return [newform[0].replace(",",""), newform[1].replace(",","")]
 	else:
 		return previous_form
 
 def get_chord_quality(chordList):
-	return [x.split(":")[1] for x in chordList]
+	qualityList = []
+	for c in chordList:
+		if c.strip() == "N" or c.strip() == "Z" or c.strip() == "&pause":
+			qualityList.append("NonHarmonic")
+		else:
+			qualityList.append(c.split(":")[1])		
+
+	return qualityList
 
 def get_bar_in_phrase(line):
 	barNumbersList = []
-	barlist =  line.split("|")[1:-1]	
+	barlist =  line.split("|")[1:-1]
 	for index, bar in enumerate(barlist):
 		chordsInBar = get_chord_sequence(bar)
 		barNumbersList += [index + 1]*len(chordsInBar)
@@ -134,12 +151,24 @@ if __name__ == '__main__':
 			relativeChords =  get_relative(Tonic,chordsInPhrase)
 			
  			title = [get_title(song).replace(" ","")]*len(chordsInPhrase)
-			barInPhrase = get_bar_in_phrase(line)	
-			totalInPhrase = [get_total_bars(barInPhrase)]*len(chordsInPhrase)
+			if 'Z' not in line : 
+				barInPhrase = get_bar_in_phrase(line)
+			else:
+				barInPhrase = [0]	
+			if 'Z' not in line : 
+				totalInPhrase = [get_total_bars(barInPhrase)]*len(chordsInPhrase)
+			else:
+				totalInPhrase = [0]
+		
+
 			phraseFormFunc = []
 			formLetter = [] 		
 			formFunc =  update_form(formFunc,line)
 			if formFunc: phraseFormFunc = [formFunc[1]]*len(chordsInPhrase)
+
+			if "arth" in phraseFormFunc:
+				print song
+			
 			if formFunc: formLetter = [formFunc[0]]*len(chordsInPhrase)
 			chordQualities = get_chord_quality(chordsInPhrase)	
 			arrows = [0]*len(chordsInPhrase)
@@ -156,7 +185,8 @@ if __name__ == '__main__':
 			formFuncList += phraseFormFunc*repeats
 			formLetterList += formLetter*repeats
 			chordQualityList += chordQualities*repeats
-			arrowList += arrows*repeats 	
+			arrowList += arrows*repeats
+
 
 		for title, form, letter, chord, interval, quality, num, total, arrows in zip(titleList, formFuncList,formLetterList,chordList,relativeChordList,chordQualityList,barNumbers,totalBarNumbers,arrowList):
 			writer.writerow([title, form,letter,chord,interval,quality,num,total,arrows])
