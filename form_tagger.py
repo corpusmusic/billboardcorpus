@@ -21,19 +21,29 @@ def get_probabilities(chord_list):
         states: a tuple containing all the hidden states in the data
 
     """
+    def get_key(i):
+        return '_'.join([chords[i]['module'], chords[i]['bar_of_phrase'], chords[i]['bars_per_phrase']])
+
     emission_counts = defaultdict(lambda: 0)
     module_counts = defaultdict(lambda: 0)
     transition_counts = defaultdict(lambda: 0)
     initial_counts = defaultdict(lambda: 0)
     for chords in chord_list:
         for i in range(len(chords)):
+
+            # skip instrumental songs
+            if 'Frankenstein' in chords[i]['song_name'] or 'ThemeFromElectricSurfboard' in chords[i]['song_name']:
+                print 'skipping'
+                break
+
             if i == 0:
-                initial_counts[chords[i]['module']] += 1
+                key = get_key(i)
+                initial_counts[key] += 1
             else:
-                transition = (chords[i-1]['module'], chords[i]['module'])
+                transition = (get_key(i-1), get_key(i))
                 transition_counts[transition] += 1
 
-            emission = (chords[i]['module'], '_'.join([chords[i]['root'], chords[i]['bar_of_phrase']]))
+            emission = (chords[i]['module'], chords[i]['root'])
             emission_counts[emission] += 1
             module_counts[chords[i]['module']] += 1
 
@@ -87,8 +97,9 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     return (prob, path[state])
 
 if __name__ == '__main__':
-    datafile = 'AlldataWithNonHarmonicsV4.csv'
-    headers = ['module', 'root', 'bar_of_phrase', 'letter']
+    # datafile = 'AlldataWithNonHarmonicsV4.csv'
+    datafile = 'example.csv'
+    headers = ['module', 'root', 'bar_of_phrase', 'letter', 'bars_per_phrase', 'song_name']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)
 
@@ -103,8 +114,9 @@ if __name__ == '__main__':
     total = 0
     for song in data:
         obs = [entry['root'] for entry in song]
-        correct = [entry['module'] for entry in song]
+        correct = [entry['module'].split('_')[0] for entry in song]
         prob, predictions = viterbi(obs, states, initial_probs, transition_probs, emission_probs)
+        predictions = [pred.split('_')[0] for pred in predictions]
         num_correct = sum(1 for pred, cor in zip(predictions, correct) if pred == cor)
         total += len(predictions)
         total_correct += num_correct

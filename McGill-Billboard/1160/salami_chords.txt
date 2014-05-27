@@ -22,7 +22,7 @@
 68.844716553	| Db:maj | Db:maj | Ab:maj | Ab:maj |
 73.54941043	| Ab:maj | Ab:maj | Ab:maj | Db:maj |, voice)
 # tonic: Eb
-78.145873015	D, modulation, | Eb:maj | Eb:maj |, (guitar)
+78.145873015	D, intro, | Eb:maj | Eb:maj |, (guitar)
 80.47462585	B, verse, | Eb:maj | Eb:maj | Bb:maj | Bb:maj |, (voice
 85.10478458	| Bb:maj | Bb:maj | Eb:maj | Eb:maj |
 89.714693877	| Eb:maj | Eb:maj | Bb:maj | Bb:maj |
