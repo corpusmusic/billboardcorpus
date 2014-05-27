@@ -4,8 +4,8 @@
 # tonic: C
 
 0.0	silence
-0.116099773	A, intro-a, | N | N |
-5.816984126	B, intro-b, | A:min7 G:maj/3 | C:maj7 F:maj |, (guitar
+0.116099773	A, intro, | N | N |
+5.816984126	B, intro, | A:min7 G:maj/3 | C:maj7 F:maj |, (guitar
 11.242403628	| A:min7 G:maj/3 | C:maj7 F:maj |, guitar)
 16.71802721	C, verse, | A:min7 G:maj/3 | C:maj C:maj/3 | F:maj(9) F:maj | A:min G:maj |, (voice
 27.849818594	| C:maj D:min | C:maj/3 F:maj | A:min G:maj | F:maj/5 C:maj |
