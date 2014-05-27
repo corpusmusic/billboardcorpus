@@ -6,7 +6,7 @@
 # extracts the entire text as a string, and splits it by whitespace, essentially
 # creating an array of only the smallest parts possible to describe the song.
 # The parser then goes part by part, deciding what to do with each one. Instead of
-# incrementing the index after each part, we pop ("remove") them and look at the 
+# incrementing the index after each part, we pop ("remove") them and look at the
 # next part in the front of the array; we shrink the array as we parse until it
 # is gone. After we finish parsing the array, we move on to the next song. Rinse
 # and repeat until we are done.
@@ -51,7 +51,7 @@ def main():
 	#Write to csv file.
 	with open(CSV_FILE, 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-		
+
 		#Get all the salami_chords files.
 		songs = [os.path.join(* [ROOT_DIR, sub_dir, 'salami_chords.txt']) for sub_dir in os.listdir(ROOT_DIR)]
 
@@ -148,13 +148,16 @@ def main():
 				#matched to. Uncommenting the elif makes the parser run through ALL the songs.
 				elif re.match(r'^x\d+,*$|N|\(\d/\d\)|[A-Z]\'*|&pause|^\*$', data[0]):
 					data.pop(0) #Ignore for testing purposes.
-				
-				#Did not match	
+
+				#Did not match
 				else:
 					#We are not meant to get here. Something went wrong.
 					sys.exit("Aborted! Could not parse: " + data[0] + " (" + song + ")")
-					
+
 			print "Parsed \"" + title + "\" (" + song + ")"
+
+			# write a blank row between songs
+			writer.writerow([])
 		print "Finished parsing! Data written to csv file: " + CSV_FILE
 
 if __name__ == '__main__':

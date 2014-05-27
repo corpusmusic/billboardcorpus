@@ -87,7 +87,8 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     return (prob, path[state])
 
 if __name__ == '__main__':
-    datafile = '15SimpleSongs.csv'
+    datafile = 'example1.csv'
+    # datafile = 'AlldataWithNonHarmonics.csv'
     headers = ['module', 'root', 'bar_of_phrase', 'letter']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)

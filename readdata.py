@@ -6,7 +6,10 @@ be used in all the analysis files, it is separated out here.
 
 import csv
 
-CSV_COLUMNS = ['module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase']
+CSV_COLUMNS = ['song_name', 'module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase', 'has_arrow']
+
+CSV_COLUMNS = ['song_name', 'letter', 'module', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase', 'has_arrow']
+
 
 def refine_form(song_list, has_chorus):
     """
@@ -30,6 +33,9 @@ def refine_form(song_list, has_chorus):
     prev_module = None
     form_list = []
     for i, entry in enumerate(song_list):
+        if 'module' not in entry:
+            return
+
         # if there is no chorus, replace verse with strophe
         if not has_chorus and entry['module'] == 'verse':
             entry['module'] = 'strophe'
@@ -38,8 +44,6 @@ def refine_form(song_list, has_chorus):
             form_list.append((i, entry['module'], entry['letter']))
 
         prev_module = entry['module']
-
-    last_entry = entry['module']
 
     if len(form_list) > 1:
         form_list_idx = 0
@@ -78,19 +82,22 @@ def read_data(filename, col_names):
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='"')
         has_chorus = False
+        prev_song = None
         for row in reader:
             if len(row) > 0:
                 entry = {k: v for k, v in zip(CSV_COLUMNS, row) if k in col_names}
 
-                # easy one-to-one form replacements
-                if entry['module'] == 'trans':
-                    entry['module'] = 'interlude'
-                if entry['module'] == 'fadeout':
-                    entry['module'] = 'outro'
-                if entry['module'] == 'chorus':
-                    has_chorus = True
+                if 'module' in entry:
+                    # easy one-to-one form replacements
+                    if entry['module'] == 'trans':
+                        entry['module'] = 'interlude'
+                    if entry['module'] == 'fadeout':
+                        entry['module'] = 'outro'
+                    if entry['module'] == 'chorus':
+                        has_chorus = True
 
                 song_list.append(entry)
+                prev_song = row[0]
 
             # line break means start the next song
             else:
