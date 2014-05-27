@@ -87,8 +87,7 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     return (prob, path[state])
 
 if __name__ == '__main__':
-    datafile = 'example1.csv'
-    # datafile = 'AlldataWithNonHarmonics.csv'
+    datafile = 'AlldataWithNonHarmonicsV4.csv'
     headers = ['module', 'root', 'bar_of_phrase', 'letter']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)
@@ -100,7 +99,15 @@ if __name__ == '__main__':
     # for state in initial_probs:
     #     print state, initial_probs[state]
 
-    # for song in data:
-    #     obs = [entry['module'] for entry in song]
-    #     print viterbi(obs, states, initial_probs, transition_probs, emission_probs)
-    #     print # newline
+    total_correct = 0
+    total = 0
+    for song in data:
+        obs = [entry['root'] for entry in song]
+        correct = [entry['module'] for entry in song]
+        prob, predictions = viterbi(obs, states, initial_probs, transition_probs, emission_probs)
+        num_correct = sum(1 for pred, cor in zip(predictions, correct) if pred == cor)
+        total += len(predictions)
+        total_correct += num_correct
+
+    print 'accuracy:', total_correct / total
+
