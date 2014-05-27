@@ -69,7 +69,7 @@ def update_form(previous_form, line):
 		#super temp fix
 		if newform[1] == "A," or newform[1] == "B," or newform[1] == "C,":
 			return [ newform[1].replace(",",""),previous_form[1] ]
-		#this is really terrible practice, but this error happens with less than .5% of chords
+		#this is really terrible practice, but this error happens with less than .5% of chords.
 		if newform[1] == "voice," or newform[1] == "vocal," or newform[1] == "brass,":
 			print "yooo"
 			return previous_form
