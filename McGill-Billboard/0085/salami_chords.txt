@@ -4,9 +4,9 @@
 # tonic: C
 
 0.000000000	silence
-0.467301587	A, intro-a, | C:5 | C:5 C:sus4(b7,9) | C:sus4(b7,9) | C:5 | C:5 |, (synthesiser
+0.467301587	A, intro, | C:5 | C:5 C:sus4(b7,9) | C:sus4(b7,9) | C:5 | C:5 |, (synthesiser
 13.789931972	| C:5(b7) | C:5(b7) C:5(13) | C:5(13) | C:5 | (2/4) C:5 |, synthesiser)
-24.427392290	B, intro-b, | C:5 | C:5 | C:5 | C:5 |
+24.427392290	B, intro, | C:5 | C:5 | C:5 | C:5 |
 34.077369614	C, verse, | C:maj(9) | C:maj(9) | G:min7 | G:min7 |, (voice
 43.618163265	| C:maj(9) | C:maj(9) | G:min7 | G:min7 |
 53.237052154	D, pre-chorus, | F:maj9 | F:maj9 | F:min | A:min |
