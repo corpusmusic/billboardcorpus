@@ -84,7 +84,7 @@ for j in range(0,9):
 		write_csv(transition_probs)
 
 		for song_name, probs in transition_probs.items():
-			print song_name + '\n' + ('-' * len(song_name)) + 'bar phrase ' + t[j] + 'of ' + z[j]
+			print song_name + '\n' + ('-' * len(song_name)) + 'Bar Phrase ' + t[j] + ' of ' + z[j]
 
 			# map roman numerals to integers for sorting, and covert back to display
 			# this isn't actually necessary, just makes printing the results look nicer
