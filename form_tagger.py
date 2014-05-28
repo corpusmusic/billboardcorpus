@@ -10,6 +10,8 @@ from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
 
+SMOOTHER = 0.0001
+
 def get_probabilities(chord_list):
     """
     Return all parameters needed for viterbi.
@@ -21,8 +23,14 @@ def get_probabilities(chord_list):
         states: a tuple containing all the hidden states in the data
 
     """
-    def get_key(i):
-        return '_'.join([chords[i]['module'], chords[i]['bar_of_phrase'], chords[i]['bars_per_phrase']])
+    def get_hidden_state(i):
+        return chords[i]['module']
+        # return '_'.join([chords[i]['module'], chords[i]['bar_of_phrase']])
+        # return '_'.join([chords[i]['module'], chords[i]['bar_of_phrase'], chords[i]['bars_per_phrase']])
+
+    def get_observed_state(i):
+        # return '_'.join([chords[i]['root'], chords[i]['bar_of_phrase']])
+        return chords[i]['root']
 
     emission_counts = defaultdict(lambda: 0)
     module_counts = defaultdict(lambda: 0)
@@ -36,15 +44,14 @@ def get_probabilities(chord_list):
                 break
 
             if i == 0:
-                key = get_key(i)
-                initial_counts[key] += 1
+                initial_counts[get_hidden_state(i)] += 1
             else:
-                transition = (get_key(i-1), get_key(i))
+                transition = (get_hidden_state(i-1), get_hidden_state(i))
                 transition_counts[transition] += 1
 
-            emission = (chords[i]['module'], chords[i]['root'])
+            emission = (get_hidden_state(i), get_observed_state(i))
             emission_counts[emission] += 1
-            module_counts[chords[i]['module']] += 1
+            module_counts[get_hidden_state(i)] += 1
 
     states = tuple(module_counts.keys())
     num_states = len(states)
@@ -55,15 +62,15 @@ def get_probabilities(chord_list):
         probability = (transition_counts[(first, second)] + 1) / (module_counts[first] + num_states)
         transition_probs[(first, second)] = probability
 
-    for module, root in emission_counts.keys():
-        probability = emission_counts[(module, root)] / module_counts[module]
-        emission_probs[(module, root)] = probability
+    for hidden, observed in emission_counts.keys():
+        probability = emission_counts[(hidden, observed)] / module_counts[hidden]
+        emission_probs[(hidden, observed)] = probability
 
     num_initial_states = sum(x for x in initial_counts.values())
     initial_probs = {k: v / num_initial_states for k, v in initial_counts.items()}
     for s in states:
         if s not in initial_probs:
-            initial_probs[s] = 0.0001
+            initial_probs[s] = SMOOTHER
 
     return transition_probs, emission_probs, initial_probs, states
 
@@ -74,7 +81,7 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
 
     # Initialize base cases (t == 0)
     for y in states:
-        V[0][y] = start_p[y] * emit_p.get((y, obs[0]), 0.0001)
+        V[0][y] = start_p[y] * emit_p.get((y, obs[0]), SMOOTHER)
         path[y] = [y]
 
     # Run Viterbi for t > 0
@@ -83,7 +90,7 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
         newpath = {}
 
         for y in states:
-            (prob, state) = max((V[t-1][y0] * trans_p.get((y0, y), 0.0001) * emit_p.get((y, obs[t]), 0.0001), y0) for y0 in states)
+            (prob, state) = max((V[t-1][y0] * trans_p.get((y0, y), SMOOTHER) * emit_p.get((y, obs[t]), SMOOTHER), y0) for y0 in states)
             V[t][y] = prob
             newpath[y] = path[state] + [y]
 
@@ -96,13 +103,12 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     return (prob, path[state])
 
 if __name__ == '__main__':
-    datafile = 'AlldataWithNonHarmonicsV5.csv'
-    # datafile = 'example.csv'
+    datafile = 'example.csv'
     headers = ['module', 'root', 'bar_of_phrase', 'letter', 'bars_per_phrase', 'song_name']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)
 
-    print states
+    # print states
     # for one, two in emission_probs:
     #     print '{}->{}: {:.4f}'.format(one, two, emission_probs[(one, two)])
 

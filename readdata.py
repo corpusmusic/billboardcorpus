@@ -26,7 +26,7 @@ def refine_form(song_list, has_chorus):
     def get_correct_module(key):
         current_letter = form_list[form_list_idx][2]
         for i, form in enumerate(form_list):
-            if current_letter == form[2] and form[1] != key:
+            if current_letter == form[2] and form[1] != key and form[1] != 'interlude':
                 # form_list[i][1] = form[1]
                 return form[1]
         return key + '(unique_harmony)'
