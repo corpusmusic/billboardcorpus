@@ -39,7 +39,7 @@ for j in range(0,9):
 
 		return song_transition_probs
 
-     def get_transition_probs(chord_counts, transition_counts):
+    def get_transition_probs(chord_counts, transition_counts):
 		"""
 		Returns a dictionary of transition probabilities based on counts for chords
 		and transitions.
@@ -61,7 +61,7 @@ for j in range(0,9):
 					probs[(first, second)] = 0
 		return probs
 
-     def write_csv(probabilities):
+    def write_csv(probabilities):
 		with open('output.csv', 'wb') as csvfile:
 			writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 			for song_name, probs in transition_probs.items():
