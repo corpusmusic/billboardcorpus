@@ -76,7 +76,7 @@ for j in range(0,9):
 				# write to csv
 				writer.writerow(line)
 
-	if __name__ == '__main__':
+    if __name__ == '__main__':
 		datafile = 'AlldataWithNonHarmonicsV5.csv'
 		data = read_data(datafile)
 		transition_probs = transition_probs_by_song(data)
