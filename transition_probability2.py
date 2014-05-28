@@ -39,8 +39,7 @@ def get_transition_probs(chord_counts, transition_counts):
 
 if __name__ == '__main__':
     datafile = 'AlldataWithNonHarmonicsV2.csv'
-    headers = ['root', 'song_name']
-    data = read_data(datafile, headers)
+    data = read_data(datafile)
     chord_counts, transition_counts, song_counts = get_overall_counts(data)
     transition_probs = get_transition_probs(chord_counts, transition_counts)
 

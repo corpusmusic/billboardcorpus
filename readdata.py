@@ -74,13 +74,14 @@ def refine_form(song_list, has_chorus):
             if entry['module'] == 'instrumental':
                 entry['module'] = get_correct_module('instrumental')
 
-def read_data(filename, col_names):
+def read_data(filename, col_names=None):
     """
     Return a list of usable data.
 
     Args:
         filename: the name of the csv to read the data from. This is the output from the parser code.
         col_names: a list that is a subset of the CSV_COLUMNS list, indicating which columns to select.
+            If col_names is not passed, all columns will be collected
 
     """
     corpus_list = []
@@ -91,7 +92,10 @@ def read_data(filename, col_names):
         prev_song = None
         for row in reader:
             if len(row) > 0:
-                entry = {k: v for k, v in zip(CSV_COLUMNS, row) if k in col_names}
+                if col_names is not None:
+                    entry = {k: v for k, v in zip(CSV_COLUMNS, row) if k in col_names}
+                else:
+                    entry = {k: v for k, v in zip(CSV_COLUMNS, row)}
 
                 if 'module' in entry:
                     # easy one-to-one form replacements
