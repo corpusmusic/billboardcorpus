@@ -7,7 +7,11 @@ from readdata import read_data
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
 
 def transition_probs_by_song(chord_lists):
-    """Return dictionaries with individual chord counts and transition counts."""
+    """
+    Return a dictionary where the keys are song names, and the values are
+    dictionaries with transitional probabilities.
+
+    """
     chord_counts = defaultdict(lambda: 0)
     transition_counts = defaultdict(lambda: 0)
     song_transition_probs = {}
@@ -16,12 +20,13 @@ def transition_probs_by_song(chord_lists):
     for chords in chord_lists:
         length = len(chords)
 
-        # for every chord in the list of chords
+        # for every chord in the list of chords, count all the transitions and root occurances
         for i in range(length-1):
             transition = (chords[i]['root'], chords[i+1]['root'])
             transition_counts[transition] += 1
             chord_counts[chords[i]['root']] += 1
 
+        # add the transition probabilities for this song into a giant dictionary
         song_transition_probs[chords[i]['song_name']] = get_transition_probs(chord_counts, transition_counts)
 
         # reset the count dictionaries for the next song
@@ -36,7 +41,7 @@ def get_transition_probs(chord_counts, transition_counts):
     and transitions.
 
     """
-    probs = dict(transition_counts) # make a copy so we don't destroy the counts dictionary
+    probs = {}
     for (first, second), count in transition_counts.items():
         probability = transition_counts[(first, second)] / chord_counts[first]
         probs[(first, second)] = probability
@@ -51,6 +56,7 @@ if __name__ == '__main__':
         print song_name + '\n' + ('-' * len(song_name))
 
         # map roman numerals to integers for sorting, and covert back to display
+        # this isn't actually necessary, just makes printing the results look nicer
         transitions = [(RN.index(c1), c2) for c1, c2 in probs]
         for c1, c2 in sorted(transitions):
             print '({} -> {}): {:.4f}'.format(RN[c1], c2, probs[(RN[c1], c2)])
