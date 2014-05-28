@@ -3,6 +3,7 @@ from __future__ import division
 from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
+import csv
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
 
@@ -42,15 +43,39 @@ def get_transition_probs(chord_counts, transition_counts):
 
     """
     probs = {}
-    for (first, second), count in transition_counts.items():
-        probability = transition_counts[(first, second)] / chord_counts[first]
-        probs[(first, second)] = probability
+
+    # go through all 144 possible transitions
+    for first in RN:
+        for second in RN:
+
+            # use try catch to avoid divide by 0 errors or key errors
+            try:
+                probability = transition_counts[(first, second)] / chord_counts[first]
+                probs[(first, second)] = probability
+
+            # if a transition isn't found in the data, give it probability 0
+            except:
+                probs[(first, second)] = 0
     return probs
+
+def write_csv(probabilities):
+    with open('output.csv', 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for song_name, probs in transition_probs.items():
+
+            # get all probabilities in sorted order, and get rid of non-harmonic transitions
+            transitions = [(RN.index(c1), c2) for c1, c2 in probs if c1 != 'NonHarmonic' and c2 != 'NonHarmonic']
+            line = [probs[(RN[c1], c2)] for c1, c2 in sorted(transitions)]
+
+            # write to csv
+            writer.writerow(line)
 
 if __name__ == '__main__':
     datafile = 'AlldataWithNonHarmonicsV5.csv'
     data = read_data(datafile)
     transition_probs = transition_probs_by_song(data)
+
+    write_csv(transition_probs)
 
     for song_name, probs in transition_probs.items():
         print song_name + '\n' + ('-' * len(song_name))
@@ -59,5 +84,7 @@ if __name__ == '__main__':
         # this isn't actually necessary, just makes printing the results look nicer
         transitions = [(RN.index(c1), c2) for c1, c2 in probs]
         for c1, c2 in sorted(transitions):
-            print '({} -> {}): {:.4f}'.format(RN[c1], c2, probs[(RN[c1], c2)])
+            probability = probs[(RN[c1], c2)]
+            if probability != 0:
+                print '({} -> {}): {:.4f}'.format(RN[c1], c2, probability)
         print #newline
