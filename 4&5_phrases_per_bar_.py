@@ -16,7 +16,7 @@ for j in range(0,9):
         for chords in chord_lists:
             length = len(chords)
             for i in range(length-1):
-                if((chords[i]['bars_per_phrase'] == z[j]) && (chords[i]['bar_of_phrase'] == t[j]):
+                if(((chords[i]['bars_per_phrase'] == z[j]) & (chords[i]['bar_of_phrase'] == t[j])):
                     transition = (chords[i]['root'], chords[i+1]['root'])
                     transition_counts[transition] += 1
                     chord_counts[chords[i]['root']] += 1
