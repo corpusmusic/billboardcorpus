@@ -71,7 +71,7 @@ for j in range(0,9):
 				line = [probs[(RN[c1], c2)] for c1, c2 in sorted(transitions)]
 
 				# uncomment the following line to add the song name as the first value in the csv
-				# line = [song_name] + line
+				line = [song_name] + line
 
 				# write to csv
 				writer.writerow(line)
