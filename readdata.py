@@ -27,6 +27,7 @@ def refine_form(song_list, has_chorus):
         current_letter = form_list[form_list_idx][2]
         for i, form in enumerate(form_list):
             if current_letter == form[2] and form[1] != key:
+                # form_list[i][1] = form[1]
                 return form[1]
         return key + '(unique_harmony)'
 
@@ -41,7 +42,7 @@ def refine_form(song_list, has_chorus):
             entry['module'] = 'strophe'
 
         if entry['module'] != prev_module:
-            form_list.append((i, entry['module'], entry['letter']))
+            form_list.append([i, entry['module'], entry['letter']])
 
         prev_module = entry['module']
 
@@ -62,9 +63,12 @@ def refine_form(song_list, has_chorus):
             if entry['module'] == 'interlude_final':
                 entry['module'] = 'outro'
             if entry['module'] == 'interlude':
+                try:
+                    form_list[form_list.index('interlude')] = 'intro'
+                except:
+                    pass
                 entry['module'] = 'intro'
-            if entry['module'] == 'interlude':
-                print 'error'
+
             if entry['module'] == 'solo':
                 entry['module'] = get_correct_module('solo')
             if entry['module'] == 'instrumental':
