@@ -43,7 +43,7 @@ for j in range(0,9):
 
         # map roman numerals to integers for sorting, and covert back to display
         transitions = [(RN.index(c1), c2) for c1, c2 in transition_probs]
-        print '\n' +'Bar Phrase ' t[j]+ ' of ' + z[j]
+        print '\n' +'Bar Phrase ' + t[j] + ' of ' + z[j]
 
         for c1, c2 in sorted(transitions):
             print '({} -> {}): {:.4f}'.format(RN[c1], c2, transition_probs[(RN[c1], c2)])
