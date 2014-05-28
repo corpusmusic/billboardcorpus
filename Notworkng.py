@@ -9,7 +9,7 @@ RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VI
 for j in range(0,9):
     z = ['4','4','4','4','5','5','5','5','5']
     t = ['1','2','3','4','1','2','3','4','5']
-	def transition_probs_by_song(chord_lists):
+    def transition_probs_by_song(chord_lists):
 		"""
 		Return a dictionary where the keys are song names, and the values are
 		dictionaries with transitional probabilities.
@@ -39,7 +39,7 @@ for j in range(0,9):
 
 		return song_transition_probs
 
-	def get_transition_probs(chord_counts, transition_counts):
+     def get_transition_probs(chord_counts, transition_counts):
 		"""
 		Returns a dictionary of transition probabilities based on counts for chords
 		and transitions.
@@ -61,7 +61,7 @@ for j in range(0,9):
 					probs[(first, second)] = 0
 		return probs
 
-	def write_csv(probabilities):
+     def write_csv(probabilities):
 		with open('output.csv', 'wb') as csvfile:
 			writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 			for song_name, probs in transition_probs.items():
