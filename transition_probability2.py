@@ -67,6 +67,9 @@ def write_csv(probabilities):
             transitions = [(RN.index(c1), c2) for c1, c2 in probs if c1 != 'NonHarmonic' and c2 != 'NonHarmonic']
             line = [probs[(RN[c1], c2)] for c1, c2 in sorted(transitions)]
 
+            # uncomment the following line to add the song name as the first value in the csv
+            # line = [song_name] + line
+
             # write to csv
             writer.writerow(line)
 
