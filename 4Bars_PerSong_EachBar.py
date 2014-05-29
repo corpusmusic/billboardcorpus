@@ -6,7 +6,7 @@ from readdata import read_data
 import csv
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
-for j in range(0,5):
+for j in range(0,4):
     z = ['4','4','4','4']
     t = ['1','2','3','4']
     def transition_probs_by_song(chord_lists):
@@ -67,8 +67,8 @@ for j in range(0,5):
 			for song_name, probs in transition_probs.items():
 
 				# get all probabilities in sorted order, and get rid of non-harmonic transitions
-				transitions = [(RN.index(c1), c2) for c1, c2 in probs if c1 != 'NonHarmonic' and c2 != 'NonHarmonic']
-				line = [probs[(RN[c1], c2)] for c1, c2 in sorted(transitions)]
+				transitions = [(RN.index(c1), RN.index(c2)) for c1, c2 in probs if c1 != 'NonHarmonic' and c2 != 'NonHarmonic']
+				line = [probs[(RN[c1], RN[c2])] for c1, c2 in sorted(transitions)]
 
 				# uncomment the following line to add the song name as the first value in the csv
 				line = [song_name] + line
@@ -77,7 +77,7 @@ for j in range(0,5):
 				writer.writerow(line)
 
     if __name__ == '__main__':
-		datafile = 'AlldataWithNonHarmonicsV5.csv'
+		datafile = 'AlldataWithNonHarmonics.csv'
 		data = read_data(datafile)
 		transition_probs = transition_probs_by_song(data)
 
@@ -88,9 +88,9 @@ for j in range(0,5):
 
 			# map roman numerals to integers for sorting, and covert back to display
 			# this isn't actually necessary, just makes printing the results look nicer
-			transitions = [(RN.index(c1), c2) for c1, c2 in probs]
+			transitions = [(RN.index(c1), RN.index(c2)) for c1, c2 in probs]
 			for c1, c2 in sorted(transitions):
-				probability = probs[(RN[c1], c2)]
+				probability = probs[(RN[c1], RN[c2])]
 				if probability != 0:
-					print '({} -> {}): {:.4f}'.format(RN[c1], c2, probability)
+					print '({} -> {}): {:.4f}'.format(RN[c1], RN[c2], probability)
 			print #newline

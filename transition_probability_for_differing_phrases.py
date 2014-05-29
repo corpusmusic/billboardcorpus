@@ -34,15 +34,15 @@ for j in range(0,16):
         return probs
 
     if __name__ == '__main__':
-        datafile = 'AlldataWithNonHarmonicsV5.csv'
+        datafile = 'AlldataWithNonHarmonics.csv'
         headers = ['root']
         data = read_data(datafile)
         chord_counts, transition_counts = get_overall_counts(data)
         transition_probs = get_transition_probs(chord_counts, transition_counts)
 
         # map roman numerals to integers for sorting, and covert back to display
-        transitions = [(RN.index(c1), c2) for c1, c2 in transition_probs]
+        transitions = [(RN.index(c1), RN.index(c2)) for c1, c2 in transition_probs]
         print '\n' +'Phrase Length = ' + z[j]
 
         for c1, c2 in sorted(transitions):
-            print '({} -> {}): {:.4f}'.format(RN[c1], c2, transition_probs[(RN[c1], c2)])
+            print '({} -> {}): {:.4f}'.format(RN[c1], RN[c2], transition_probs[(RN[c1], RN[c2])])

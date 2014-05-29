@@ -93,7 +93,7 @@ if __name__ == '__main__':
 		with open(ALL_DATA_FILE, 'rb') as csv_in:
 			reader = csv.reader(csv_in)
 			#Second, create an output file
-			with open(OUTPUT_FILE_PREFIX + str(cluster_id + 1) + "of" + str(len(clusters)) + ".csv", 'wb') as csv_out:
+			with open(str(len(clusters)) + OUTPUT_FILE_PREFIX + str(cluster_id + 1) + "of" + str(len(clusters)) + ".csv", 'wb') as csv_out:
 				writer = csv.writer(csv_out)
 				#Finally, for each row in the input file...
 				for row in reader:
@@ -103,5 +103,5 @@ if __name__ == '__main__':
 						if row[0] in clusters[cluster_id]:
 							#then write the data into the current cluster's output file.
 							writer.writerow(row)
-				print "Created cluster in file: " + OUTPUT_FILE_PREFIX + str(cluster_id + 1) + "of" + str(len(clusters)) + ".csv"
+				print "Created cluster in file: " + str(len(clusters)) + OUTPUT_FILE_PREFIX + str(cluster_id + 1) + "of" + str(len(clusters)) + ".csv"
 	print "Done!"
