@@ -74,7 +74,7 @@ def write_csv(probabilities):
             writer.writerow(line)
 
 if __name__ == '__main__':
-    datafile = 'AlldataWithNonHarmonicsV5.csv'
+    datafile = 'AlldataWithNonHarmonics.csv'
     data = read_data(datafile)
     transition_probs = transition_probs_by_song(data)
 

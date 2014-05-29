@@ -25,7 +25,7 @@ def transition_probs_by_song(chord_lists):
         for i in range(length-1):
             transition = (chords[i+1]['root'], chords[i]['root'])
             transition_counts[transition] += 1
-            chord_counts[chords[i]['root']] += 1
+            chord_counts[chords[i+1]['root']] += 1
 
         # add the transition probabilities for this song into a giant dictionary
         song_transition_probs[chords[i]['song_name']] = get_transition_probs(chord_counts, transition_counts)
