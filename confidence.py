@@ -12,8 +12,22 @@ def load_csv(filename):
 		reader = csv.reader(f, delimiter='\t', quotechar='"' )
 		for row in reader:
 			valuesList = row
+			valuesListNoTitle = valuesList[1:]
+			isZeroList = [valuesListNoTitle[i:i+12] for i in xrange(0,len(valuesListNoTitle),12)]
+			writeBoolList = []
+			for chunks in isZeroList:
+				chunks = [float(x) for x in chunks]
+				if all(v ==0 for v in chunks):
+					writeBoolList.append([0]*12)
+				else:
+
+					writeBoolList.append([1]*12)
+			
+			writeBoolList = [item for sublist in writeBoolList for item in sublist]
+			writeBoolList.insert(0,1) 
 			for index,value in enumerate(valuesList):
-				transDict[index].append(value)
+				if writeBoolList[index]:
+					transDict[index].append(value)
 		return transDict
 
 #look at zeros vs non zeros 
@@ -55,8 +69,6 @@ def generate_tables(chunk):
 	
 			datanozeros = filter(lambda x: x != 0, data)
 			
-			print datanozeros
-
 			con = mean_confidence_interval(data)
 			conNoZeros = mean_confidence_interval(datanozeros)
 
