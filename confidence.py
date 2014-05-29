@@ -9,7 +9,7 @@ import time
 def load_csv(filename):
 	transDict = defaultdict(list)
 	with open(filename,'rb') as f:
-		reader = csv.reader(f, delimiter='\t', quotechar='"' )
+		reader = csv.reader(f, delimiter=',', quotechar='"' )
 		for row in reader:
 			valuesList = row
 			valuesListNoTitle = valuesList[1:]
@@ -61,7 +61,7 @@ def generate_tables(chunk):
 	meanTableNoZeros = []
 	intervalTableNoZeros = []
 
-	disDict = load_csv('output4bars.csv')
+	disDict = load_csv('outputeachsongperbar.csv')
 	for key in range(145):
 		if key != 0:
 			data = [float(x) for x in disDict[key][1:]]
@@ -82,10 +82,10 @@ def generate_tables(chunk):
 	intervalTable = [intervalTable[i:i+12] for i in xrange(0,len(intervalTable),12)]
 	intervalTableNoZeros = [intervalTableNoZeros[i:i+12] for i in xrange(0,len(intervalTableNoZeros),12)]
 
-	write_csv(meanTable,"meanTransistionProbabilities" + str(chunk))
-	write_csv(meanTableNoZeros, "MeanTransitionProbabilitiesNoZero" + str(chunk))
-        write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk))
-        write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
+	write_csv(meanTable,"meanTransistionProbabilities" + str(chunk) +".csv")
+	#write_csv(meanTableNoZeros, "MeanTransitionProbabilitiesNoZero" + str(chunk) +".csv")
+        write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk) + ".csv")
+        #write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
 	
 		
 generate_tables(0)
