@@ -9,11 +9,25 @@ import time
 def load_csv(filename):
 	transDict = defaultdict(list)
 	with open(filename,'rb') as f:
-		reader = csv.reader(f, delimiter='\t', quotechar='"' )
+		reader = csv.reader(f, delimiter=',', quotechar='"' )
 		for row in reader:
 			valuesList = row
+			valuesListNoTitle = valuesList[1:]
+			isZeroList = [valuesListNoTitle[i:i+12] for i in xrange(0,len(valuesListNoTitle),12)]
+			writeBoolList = []
+			for chunks in isZeroList:
+				chunks = [float(x) for x in chunks]
+				if all(v ==0 for v in chunks):
+					writeBoolList.append([0]*12)
+				else:
+
+					writeBoolList.append([1]*12)
+			
+			writeBoolList = [item for sublist in writeBoolList for item in sublist]
+			writeBoolList.insert(0,1) 
 			for index,value in enumerate(valuesList):
-				transDict[index].append(value)
+				if writeBoolList[index]:
+					transDict[index].append(value)
 		return transDict
 
 #look at zeros vs non zeros 
@@ -47,7 +61,7 @@ def generate_tables(chunk):
 	meanTableNoZeros = []
 	intervalTableNoZeros = []
 
-	disDict = load_csv('output4bars.csv')
+	disDict = load_csv('outputeachsongperbar.csv')
 	for key in range(145):
 		if key != 0:
 			data = [float(x) for x in disDict[key][1:]]
@@ -55,8 +69,6 @@ def generate_tables(chunk):
 	
 			datanozeros = filter(lambda x: x != 0, data)
 			
-			print datanozeros
-
 			con = mean_confidence_interval(data)
 			conNoZeros = mean_confidence_interval(datanozeros)
 
@@ -70,10 +82,10 @@ def generate_tables(chunk):
 	intervalTable = [intervalTable[i:i+12] for i in xrange(0,len(intervalTable),12)]
 	intervalTableNoZeros = [intervalTableNoZeros[i:i+12] for i in xrange(0,len(intervalTableNoZeros),12)]
 
-	write_csv(meanTable,"meanTransistionProbabilities" + str(chunk))
-	write_csv(meanTableNoZeros, "MeanTransitionProbabilitiesNoZero" + str(chunk))
-        write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk))
-        write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
+	write_csv(meanTable,"meanTransistionProbabilities" + str(chunk) +".csv")
+	#write_csv(meanTableNoZeros, "MeanTransitionProbabilitiesNoZero" + str(chunk) +".csv")
+        write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk) + ".csv")
+        #write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
 	
 		
 generate_tables(0)

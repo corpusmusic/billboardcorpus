@@ -35,7 +35,7 @@ for j in range(0,9):
         return probs
 
     if __name__ == '__main__':
-        datafile = 'AlldataWithNonHarmonicsV5.csv'
+        datafile = 'AlldataWithNonHarmonics.csv'
         headers = ['root']
         data = read_data(datafile)
         chord_counts, transition_counts = get_overall_counts(data)
