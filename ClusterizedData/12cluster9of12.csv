@@ -94,6 +94,7 @@ SweetSurrender,outro,A',E:11,V,11,2,4,0
 SweetSurrender,outro,A',A:maj,I,maj,3,4,0
 SweetSurrender,outro,A',D:min/5,IV,min/5,3,4,0
 SweetSurrender,outro,A',A:maj,I,maj,4,4,0
+
 "KnowingMe,KnowingYou",intro,A,G:maj,IV,maj,1,4,0
 "KnowingMe,KnowingYou",intro,A,E:min,II,min,1,4,0
 "KnowingMe,KnowingYou",intro,A,E:min,II,min,2,4,0
@@ -246,6 +247,7 @@ SweetSurrender,outro,A',A:maj,I,maj,4,4,0
 "KnowingMe,KnowingYou",fadeout,,D:maj,I,maj,1,3,0
 "KnowingMe,KnowingYou",fadeout,,F#:min,III,min,2,3,0
 "KnowingMe,KnowingYou",fadeout,,G:maj,IV,maj,3,3,0
+
 YouDon'tOwnMe,intro,A,G:min,I,min,1,2,0
 YouDon'tOwnMe,intro,A,G:min,I,min,2,2,0
 YouDon'tOwnMe,verse,A,G:min,I,min,1,2,0
@@ -305,6 +307,7 @@ YouDon'tOwnMe,fadeout,B,Bb:maj,I,maj,1,4,0
 YouDon'tOwnMe,fadeout,B,G:min,VI,min,2,4,0
 YouDon'tOwnMe,fadeout,B,Eb:maj,IV,maj,3,4,0
 YouDon'tOwnMe,fadeout,B,F:7,V,7,4,4,0
+
 HisLatestFlame,intro,A,G:maj,I,maj,1,6,0
 HisLatestFlame,intro,A,E:min,VI,min,2,6,0
 HisLatestFlame,intro,A,G:maj,I,maj,3,6,0
@@ -415,6 +418,7 @@ HisLatestFlame,fadeout,,G:maj,I,maj,3,4,0
 HisLatestFlame,fadeout,,E:min,VI,min,4,4,0
 HisLatestFlame,fadeout,,C:maj,IV,maj,1,2,0
 HisLatestFlame,fadeout,,D:maj,V,maj,2,2,0
+
 TheBattleOfNewOrleans,intro,A,A:maj,I,maj,1,5,0
 TheBattleOfNewOrleans,intro,A,D:maj,IV,maj,2,5,0
 TheBattleOfNewOrleans,intro,A,E:7,V,7,3,5,0
@@ -537,6 +541,7 @@ TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,1,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,2,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,3,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,4,4,0
+
 MyKindaLover,intro,A,C:maj,I,maj,1,2,0
 MyKindaLover,intro,A,C:maj,I,maj,2,2,0
 MyKindaLover,verse,B,C:maj,I,maj,1,4,0
@@ -627,6 +632,7 @@ MyKindaLover,fadeout,,A:min,VI,min,1,4,0
 MyKindaLover,fadeout,,F:maj,IV,maj,2,4,0
 MyKindaLover,fadeout,,G:maj,V,maj,3,4,0
 MyKindaLover,fadeout,,A:min,VI,min,4,4,0
+
 WillYouLoveMeTomorrow,intro,A,C:maj,I,maj,1,4,0
 WillYouLoveMeTomorrow,intro,A,C:maj,I,maj,2,4,0
 WillYouLoveMeTomorrow,intro,A,C:maj,I,maj,3,4,0
@@ -719,6 +725,7 @@ WillYouLoveMeTomorrow,fadeout,,F:maj,IV,maj,1,4,0
 WillYouLoveMeTomorrow,fadeout,,G:maj,V,maj,2,4,0
 WillYouLoveMeTomorrow,fadeout,,C:maj,I,maj,3,4,0
 WillYouLoveMeTomorrow,fadeout,,C:maj,I,maj,4,4,0
+
 Here'sSomeLove,intro,A,Bb:min,VI,min,1,4,0
 Here'sSomeLove,intro,A,Eb:min,II,min,2,4,0
 Here'sSomeLove,intro,A,Gb:maj6,IV,maj6,3,4,0
@@ -794,6 +801,7 @@ Here'sSomeLove,chorus,C,Db:maj,I,maj,2,4,0
 Here'sSomeLove,chorus,C,Ab:maj,V,maj,3,4,0
 Here'sSomeLove,chorus,C,Gb:maj,IV,maj,4,4,0
 Here'sSomeLove,chorus,C,Db:maj,I,maj,4,4,0
+
 DoIDo,intro,A,B:maj9,I,maj9,1,4,0
 DoIDo,intro,A,B:maj9,I,maj9,2,4,0
 DoIDo,intro,A,E:maj6(9),IV,maj6(9),3,4,0
@@ -1167,6 +1175,7 @@ DoIDo,interlude,A,N,NonHarmonic,NonHarmonic,2,4,0
 DoIDo,interlude,A,N,NonHarmonic,NonHarmonic,3,4,0
 DoIDo,interlude,A,N,NonHarmonic,NonHarmonic,4,4,0
 DoIDo,interlude,A,B:1,I,1,4,4,0
+
 Nightshift,intro,A,N,NonHarmonic,NonHarmonic,1,4,0
 Nightshift,intro,A,N,NonHarmonic,NonHarmonic,2,4,0
 Nightshift,intro,A,N,NonHarmonic,NonHarmonic,3,4,0
@@ -1296,6 +1305,7 @@ Nightshift,fadeout,,Ab:maj,I,maj,3,5,0
 Nightshift,fadeout,,Ab:maj,I,maj,4,5,0
 Nightshift,fadeout,,Eb:maj,V,maj,4,5,0
 Nightshift,fadeout,,Ab:maj,I,maj,5,5,0
+
 StandByMe,intro,A,G:maj,I,maj,1,4,0
 StandByMe,intro,A,G:maj,I,maj,2,4,0
 StandByMe,intro,A,G:maj,I,maj,3,4,0
@@ -1388,6 +1398,7 @@ StandByMe,fadeout,,C:maj,IV,maj,1,4,0
 StandByMe,fadeout,,D:maj,V,maj,2,4,0
 StandByMe,fadeout,,G:maj,I,maj,3,4,0
 StandByMe,fadeout,,G:maj,I,maj,4,4,0
+
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,1,4,0
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,2,4,0
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,3,4,0
@@ -1503,6 +1514,7 @@ DanceAway,fadeout,,C:maj,VI,maj,4,7,0
 DanceAway,fadeout,,F:maj,II,maj,5,7,0
 DanceAway,fadeout,,D:min,VII,min,6,7,0
 DanceAway,fadeout,,Bb:maj,V,maj,7,7,0
+
 WhatYouSeeIsWhatYouGet,intro,A,F:maj,I,maj,1,4,0
 WhatYouSeeIsWhatYouGet,intro,A,F:sus2,I,sus2,2,4,0
 WhatYouSeeIsWhatYouGet,intro,A,Bb:maj,IV,maj,2,4,0
@@ -1751,6 +1763,7 @@ WhatYouSeeIsWhatYouGet,fadeout,,Bb:maj/7,IV,maj/7,2,4,0
 WhatYouSeeIsWhatYouGet,fadeout,,C:maj,V,maj,3,4,0
 WhatYouSeeIsWhatYouGet,fadeout,,Bb:maj,IV,maj,4,4,0
 WhatYouSeeIsWhatYouGet,fadeout,,C:maj,V,maj,4,4,0
+
 BackHomeAgain,intro,A,E:maj,I,maj,1,4,0
 BackHomeAgain,intro,A,E:maj,I,maj,2,4,0
 BackHomeAgain,intro,A,E:maj,I,maj,3,4,0
@@ -1888,6 +1901,7 @@ BackHomeAgain,outro,,B:7,V,7,2,4,0
 BackHomeAgain,outro,,A:maj,IV,maj,3,4,0
 BackHomeAgain,outro,,A:maj,IV,maj,4,4,0
 BackHomeAgain,outro,,E:maj,I,maj,4,4,0
+
 I'llTakeYouThere,intro,A,C:maj,I,maj,1,1,0
 I'llTakeYouThere,intro,A,C:maj,I,maj,1,4,0
 I'llTakeYouThere,intro,A,F:maj,IV,maj,2,4,0
@@ -2006,6 +2020,7 @@ I'llTakeYouThere,chorus,B,"G:sus4(b7,9)",V,"sus4(b7,9)",2,4,0
 I'llTakeYouThere,chorus,B,C:maj,I,maj,3,4,0
 I'llTakeYouThere,chorus,B,F:maj,IV,maj,4,4,0
 I'llTakeYouThere,chorus,B,"G:sus4(b7,9)",V,"sus4(b7,9)",4,4,0
+
 HeavenMustHaveSentYou,intro,A',N,NonHarmonic,NonHarmonic,1,1,0
 HeavenMustHaveSentYou,intro,A',C:maj,I,maj,1,4,0
 HeavenMustHaveSentYou,intro,A',C:maj,I,maj,2,4,0
@@ -2154,6 +2169,7 @@ HeavenMustHaveSentYou,fadeout,,F:maj7,IV,maj7,2,4,0
 HeavenMustHaveSentYou,fadeout,,G:maj,V,maj,3,4,0
 HeavenMustHaveSentYou,fadeout,,E:min,III,min,4,4,0
 HeavenMustHaveSentYou,fadeout,,G:maj,V,maj,4,4,0
+
 IslandOfLostSouls,intro,A,D:maj,I,maj,1,4,0
 IslandOfLostSouls,intro,A,D:maj,I,maj,2,4,0
 IslandOfLostSouls,intro,A,D:maj,I,maj,3,4,0
@@ -2341,6 +2357,7 @@ IslandOfLostSouls,outro,G,G:maj,IV,maj,3,4,0
 IslandOfLostSouls,outro,G,A:maj,V,maj,3,4,0
 IslandOfLostSouls,outro,G,D:maj,I,maj,4,4,0
 IslandOfLostSouls,outro,G,A:7,V,7,4,4,0
+
 Jamie,intro,A,Bb:7,V,7,1,2,0
 Jamie,intro,A,Bb:7,V,7,2,2,0
 Jamie,intro,B,Eb:maj,I,maj,1,4,0
@@ -2443,6 +2460,7 @@ Jamie,outro,B,Eb:maj,I,maj,1,2,0
 Jamie,outro,B,C:min,VI,min,1,2,0
 Jamie,outro,B,Ab:maj,IV,maj,2,2,0
 Jamie,outro,B,Bb:7,V,7,2,2,0
+
 "OhMe,OhMy(DreamsInMyArms)",intro,A,F:maj,I,maj,1,4,0
 "OhMe,OhMy(DreamsInMyArms)",intro,A,Bb:maj,IV,maj,2,4,0
 "OhMe,OhMy(DreamsInMyArms)",intro,A,G:min,II,min,3,4,0
@@ -2509,6 +2527,7 @@ Jamie,outro,B,Bb:7,V,7,2,2,0
 "OhMe,OhMy(DreamsInMyArms)",outro,C',Eb:9,bVII,9,4,6,0
 "OhMe,OhMy(DreamsInMyArms)",outro,C',E:7,VII,7,5,6,0
 "OhMe,OhMy(DreamsInMyArms)",outro,C',C:7,V,7,6,6,0
+
 OhMeOhMy(I'mAFoolForYouBaby),intro,A,"F:sus4(b7,9)",V,"sus4(b7,9)",1,4,0
 OhMeOhMy(I'mAFoolForYouBaby),intro,A,Bb:maj7,I,maj7,2,4,0
 OhMeOhMy(I'mAFoolForYouBaby),intro,A,"F:sus4(b7,9)",V,"sus4(b7,9)",3,4,0
@@ -2612,6 +2631,7 @@ OhMeOhMy(I'mAFoolForYouBaby),chorus,C,F:7,V,7,3,4,0
 OhMeOhMy(I'mAFoolForYouBaby),chorus,C,Bb:maj,I,maj,4,4,0
 OhMeOhMy(I'mAFoolForYouBaby),chorus,C,D:min7,III,min7,4,4,0
 OhMeOhMy(I'mAFoolForYouBaby),chorus,C,G:min7,VI,min7,4,4,0
+
 WishSomeoneWouldCare,intro,A,B:min,VI,min,1,4,0
 WishSomeoneWouldCare,intro,A,D:maj,I,maj,2,4,0
 WishSomeoneWouldCare,intro,A,B:min,VI,min,3,4,0
@@ -2643,6 +2663,7 @@ WishSomeoneWouldCare,chorus,C,D:maj,I,maj,1,2,0
 WishSomeoneWouldCare,chorus,C,B:min,VI,min,2,2,0
 WishSomeoneWouldCare,fadeout,,D:maj,I,maj,1,2,0
 WishSomeoneWouldCare,fadeout,,B:min,VI,min,2,2,0
+
 DoubleShot(OfMyBaby'sLove),intro,A,N,NonHarmonic,NonHarmonic,1,1,0
 DoubleShot(OfMyBaby'sLove),intro,B,Ab:maj,I,maj,1,4,0
 DoubleShot(OfMyBaby'sLove),intro,B,F:min,VI,min,2,4,0
@@ -2729,6 +2750,7 @@ DoubleShot(OfMyBaby'sLove),outro,B,Ab:maj,I,maj,1,4,0
 DoubleShot(OfMyBaby'sLove),outro,B,F:min,VI,min,2,4,0
 DoubleShot(OfMyBaby'sLove),outro,B,Ab:maj,I,maj,3,4,0
 DoubleShot(OfMyBaby'sLove),outro,B,F:min,VI,min,4,4,0
+
 LetMeGetToKnowYou,intro,A,E:min,I,min,1,4,0
 LetMeGetToKnowYou,intro,A,A:min7,IV,min7,2,4,0
 LetMeGetToKnowYou,intro,A,B:sus4,V,sus4,3,4,0
@@ -2843,6 +2865,7 @@ LetMeGetToKnowYou,fadeout,C,C:maj,bVI,maj,3,5,0
 LetMeGetToKnowYou,fadeout,C,D:maj,bVII,maj,3,5,0
 LetMeGetToKnowYou,fadeout,C,G:7,bIII,7,4,5,0
 LetMeGetToKnowYou,fadeout,C,B:sus4,V,sus4,5,5,0
+
 ThinkOfMe,intro,A,B:maj,I,maj,1,4,0
 ThinkOfMe,intro,A,F#:7,V,7,2,4,0
 ThinkOfMe,intro,A,B:maj,I,maj,3,4,0
@@ -2918,6 +2941,7 @@ ThinkOfMe,chorus,B',B:maj,I,maj,4,4,0
 ThinkOfMe,chorus,B',F#:7,V,7,1,3,0
 ThinkOfMe,chorus,B',B:maj,I,maj,2,3,0
 ThinkOfMe,chorus,B',B:maj,I,maj,3,3,0
+
 LoveTrain,intro,A',C:maj,I,maj,1,4,0
 LoveTrain,intro,A',D:maj,II,maj,2,4,0
 LoveTrain,intro,A',F:maj,IV,maj,3,4,0
@@ -3017,6 +3041,7 @@ LoveTrain,fadeout,,G:sus4,V,sus4,4,4,0
 LoveTrain,fadeout,,C:maj,I,maj,1,3,0
 LoveTrain,fadeout,,D:maj,II,maj,2,3,0
 LoveTrain,fadeout,,F:maj,IV,maj,3,3,0
+
 There'sNoOther(LikeMyBaby),intro,A,D:maj,I,maj,1,4,0
 There'sNoOther(LikeMyBaby),intro,A,G:maj,IV,maj,2,4,0
 There'sNoOther(LikeMyBaby),intro,A,A:maj,V,maj,2,4,0
@@ -3082,6 +3107,7 @@ There'sNoOther(LikeMyBaby),chorus,B',A:maj,V,maj,2,4,0
 There'sNoOther(LikeMyBaby),chorus,B',D:maj,I,maj,3,4,0
 There'sNoOther(LikeMyBaby),chorus,B',G:maj,IV,maj,3,4,0
 There'sNoOther(LikeMyBaby),chorus,B',D:maj,I,maj,4,4,0
+
 MotownPhilly,intro,A,N,NonHarmonic,NonHarmonic,1,1,0
 MotownPhilly,intro,A,D:min7,I,min7,1,4,0
 MotownPhilly,intro,A,D:min7,I,min7,2,4,0
@@ -3202,6 +3228,7 @@ MotownPhilly,coda,E',D:min,I,min,4,4,0
 MotownPhilly,coda,E',A:7(b9),V,7(b9),1,2,0
 MotownPhilly,coda,E',A:7,V,7,1,2,0
 MotownPhilly,coda,E',D:min,I,min,2,2,0
+
 DyerMaker,intro,A',N,NonHarmonic,NonHarmonic,0,0,0
 DyerMaker,intro,A',N,NonHarmonic,NonHarmonic,1,2,0
 DyerMaker,intro,A',C:maj,I,maj,2,2,0
@@ -3352,6 +3379,7 @@ DyerMaker,fadeout,,C:maj,I,maj,2,4,0
 DyerMaker,fadeout,,A:min,VI,min,3,4,0
 DyerMaker,fadeout,,F:maj,IV,maj,3,4,0
 DyerMaker,fadeout,,G:maj,V,maj,4,4,0
+
 HungryEyes,intro,A,F:1,I,1,1,2,0
 HungryEyes,intro,A,F:1,I,1,2,2,0
 HungryEyes,intro,C',F:maj(9),I,maj(9),1,4,0
@@ -3512,6 +3540,7 @@ HungryEyes,outro,C,C:maj,V,maj,2,4,0
 HungryEyes,outro,C,F:maj,I,maj,3,4,0
 HungryEyes,outro,C,Bb:maj,IV,maj,4,4,0
 HungryEyes,outro,C,C:maj,V,maj,4,4,0
+
 HisLatestFlame,intro,A,G:maj,I,maj,1,6,0
 HisLatestFlame,intro,A,E:min,VI,min,2,6,0
 HisLatestFlame,intro,A,G:maj,I,maj,3,6,0
@@ -3622,6 +3651,7 @@ HisLatestFlame,fadeout,,G:maj,I,maj,3,4,0
 HisLatestFlame,fadeout,,E:min,VI,min,4,4,0
 HisLatestFlame,fadeout,,C:maj,IV,maj,1,2,0
 HisLatestFlame,fadeout,,D:maj,V,maj,2,2,0
+
 IDon'tWantToSpoilTheParty,intro,A,G:maj,I,maj,1,4,0
 IDon'tWantToSpoilTheParty,intro,A,G:7,I,7,2,4,0
 IDon'tWantToSpoilTheParty,intro,A,G:maj6,I,maj6,2,4,0
@@ -3747,6 +3777,7 @@ IDon'tWantToSpoilTheParty,outro,A,D:maj,V,maj,1,3,0
 IDon'tWantToSpoilTheParty,outro,A,D:maj/9,V,maj/9,2,3,0
 IDon'tWantToSpoilTheParty,outro,A,D:7/3,V,7/3,2,3,0
 IDon'tWantToSpoilTheParty,outro,A,G:maj,I,maj,3,3,0
+
 SleepWalk,intro,C,Db:maj,I,maj,1,4,0
 SleepWalk,intro,C,Bb:min,VI,min,2,4,0
 SleepWalk,intro,C,Gb:min,IV,min,3,4,0
@@ -3821,6 +3852,7 @@ SleepWalk,outro,J,Db:maj7,I,maj7,1,4,0
 SleepWalk,outro,J,Ab:7(b9),V,7(b9),2,4,0
 SleepWalk,outro,J,Db:maj13,I,maj13,3,4,0
 SleepWalk,outro,J,Db:maj13,I,maj13,4,4,0
+
 ThereSheGoes,intro,A,G:maj,I,maj,1,4,0
 ThereSheGoes,intro,A,D:maj/3,V,maj/3,1,4,0
 ThereSheGoes,intro,A,C:maj(9)/3,IV,maj(9)/3,2,4,0
@@ -3957,6 +3989,7 @@ ThereSheGoes,chorus,B,G:maj,I,maj,1,3,0
 ThereSheGoes,chorus,B,D:maj,V,maj,1,3,0
 ThereSheGoes,chorus,B,C:maj(9),IV,maj(9),2,3,0
 ThereSheGoes,chorus,B,G:maj,I,maj,3,3,0
+
 TheGoonies`RGoodEnough,intro,A,C#:5(b7),VI,5(b7),1,1,0
 TheGoonies`RGoodEnough,intro,A,C#:5(b7),VI,5(b7),1,1,0
 TheGoonies`RGoodEnough,intro,A,C#:5(b7),VI,5(b7),1,1,0
@@ -4091,6 +4124,7 @@ TheGoonies`RGoodEnough,chorus,E,B:maj,V,maj,2,2,0
 TheGoonies`RGoodEnough,coda,A,C#:5(b7),VI,5(b7),1,1,0
 TheGoonies`RGoodEnough,coda,A,C#:5(b7),VI,5(b7),1,1,0
 TheGoonies`RGoodEnough,coda,A,C#:5(b7),VI,5(b7),1,1,0
+
 JustLikeJesseJames,intro,A,Ab:maj,I,maj,1,4,0
 JustLikeJesseJames,intro,A,Eb:maj,V,maj,1,4,0
 JustLikeJesseJames,intro,A,Db:maj,IV,maj,2,4,0
@@ -4221,6 +4255,7 @@ JustLikeJesseJames,chorus,D',Eb:maj/11,V,maj/11,1,3,0
 JustLikeJesseJames,chorus,D',Db:maj/5,IV,maj/5,2,3,0
 JustLikeJesseJames,chorus,D',Eb:maj/11,V,maj/11,2,3,0
 JustLikeJesseJames,chorus,D',Ab:maj,I,maj,3,3,0
+
 BackHomeAgain,intro,A,E:maj,I,maj,1,4,0
 BackHomeAgain,intro,A,E:maj,I,maj,2,4,0
 BackHomeAgain,intro,A,E:maj,I,maj,3,4,0
@@ -4358,6 +4393,7 @@ BackHomeAgain,outro,,B:7,V,7,2,4,0
 BackHomeAgain,outro,,A:maj,IV,maj,3,4,0
 BackHomeAgain,outro,,A:maj,IV,maj,4,4,0
 BackHomeAgain,outro,,E:maj,I,maj,4,4,0
+
 Pressure,intro,A,G:5,IV,5,1,4,0
 Pressure,intro,A,G:5,IV,5,2,4,0
 Pressure,intro,A,D:5,I,5,3,4,0
@@ -4625,6 +4661,7 @@ Pressure,chorus,B',G:sus4/5,IV,sus4/5,3,4,0
 Pressure,chorus,B',A:7/11,V,7/11,4,4,0
 Pressure,chorus,B',D:maj,I,maj,4,4,0
 Pressure,chorus,B',D:min,I,min,1,1,0
+
 OhMyAngel,intro,A,F:maj7/3,IV,maj7/3,1,2,0
 OhMyAngel,intro,A,E:min7/b3,III,min7/b3,1,2,0
 OhMyAngel,intro,A,D:min7/b3,II,min7/b3,2,2,0
@@ -4696,6 +4733,7 @@ OhMyAngel,verse,B,Db:maj7,I,maj7,1,4,0
 OhMyAngel,verse,B,Gb:maj,IV,maj,2,4,0
 OhMyAngel,verse,B,Db:maj,I,maj,3,4,0
 OhMyAngel,verse,B,Db:maj,I,maj,4,4,0
+
 DoYouWantToKnowASecret,intro,A,E:min,I,min,1,6,0
 DoYouWantToKnowASecret,intro,A,F#:hdim7,II,hdim7,2,6,0
 DoYouWantToKnowASecret,intro,A,E:min,I,min,2,6,0
@@ -4810,6 +4848,7 @@ DoYouWantToKnowASecret,fadeout,,B:maj,V,maj,2,2,0
 DoYouWantToKnowASecret,fadeout,,C#:min,VI,min,1,2,0
 DoYouWantToKnowASecret,fadeout,,A:maj,IV,maj,2,2,0
 DoYouWantToKnowASecret,fadeout,,B:maj,V,maj,2,2,0
+
 InvisibleTouch,intro,A,N,NonHarmonic,NonHarmonic,1,5,0
 InvisibleTouch,intro,A,F:sus4,I,sus4,2,5,0
 InvisibleTouch,intro,A,F:maj,I,maj,2,5,0
@@ -4996,6 +5035,7 @@ InvisibleTouch,chorus,D,G:maj,II,maj,3,4,0
 InvisibleTouch,chorus,D,C:maj/3,V,maj/3,4,4,0
 InvisibleTouch,chorus,D,"D:sus4(b7,9)",VI,"sus4(b7,9)",4,4,0
 InvisibleTouch,chorus,D,D:maj,VI,maj,4,4,0
+
 IfNotYou,intro,A,D:maj,I,maj,1,4,0
 IfNotYou,intro,A,D:maj,I,maj,2,4,0
 IfNotYou,intro,A,D:maj,I,maj,3,4,0
@@ -5072,6 +5112,7 @@ IfNotYou,outro,C,G:maj,IV,maj,1,4,0
 IfNotYou,outro,C,A:7,V,7,2,4,0
 IfNotYou,outro,C,D:maj,I,maj,3,4,0
 IfNotYou,outro,C,D:maj,I,maj,4,4,0
+
 GiveToLive,verse,A,Z,NonHarmonic,NonHarmonic,0,0,0
 GiveToLive,verse,A,E:min,II,min,1,4,0
 GiveToLive,verse,A,A:maj,V,maj,1,4,0
@@ -5210,6 +5251,7 @@ GiveToLive,outro,B',G:maj,IV,maj,3,4,0
 GiveToLive,outro,B',A:maj,V,maj,4,4,0
 GiveToLive,outro,B',D:maj/5,I,maj/5,1,2,0
 GiveToLive,outro,B',&pause,NonHarmonic,NonHarmonic,2,2,0
+
 It'sOnlyMakeBelieve,intro,A,C:maj,I,maj,1,4,0
 It'sOnlyMakeBelieve,intro,A,A:min,VI,min,2,4,0
 It'sOnlyMakeBelieve,intro,A,F:maj,IV,maj,3,4,0
@@ -5261,6 +5303,7 @@ It'sOnlyMakeBelieve,verse,B',D:maj,I,maj,4,4,0
 It'sOnlyMakeBelieve,verse,B',G:maj,IV,maj,4,4,0
 It'sOnlyMakeBelieve,verse,B',D:maj,I,maj,1,2,0
 It'sOnlyMakeBelieve,verse,B',D:maj,I,maj,2,2,0
+
 JustCan'tWait,intro,A,G:maj,I,maj,1,4,0
 JustCan'tWait,intro,A,D:maj,V,maj,2,4,0
 JustCan'tWait,intro,A,G:maj/5,I,maj/5,2,4,0
@@ -5464,6 +5507,7 @@ JustCan'tWait,coda,A',C:maj,IV,maj,2,4,0
 JustCan'tWait,coda,A',G:maj,I,maj,3,4,0
 JustCan'tWait,coda,A',C:maj,IV,maj,3,4,0
 JustCan'tWait,coda,A',G:maj,I,maj,4,4,0
+
 Jump(forMyLove),intro,A,N,NonHarmonic,NonHarmonic,1,6,0
 Jump(forMyLove),intro,A,N,NonHarmonic,NonHarmonic,2,6,0
 Jump(forMyLove),intro,A,A:maj,I,maj,2,6,0
@@ -5722,6 +5766,7 @@ Jump(forMyLove),fadeout,,F:maj/3,I,maj/3,3,4,0
 Jump(forMyLove),fadeout,,Bb:maj,IV,maj,3,4,0
 Jump(forMyLove),fadeout,,C:maj/3,V,maj/3,4,4,0
 Jump(forMyLove),fadeout,,F:maj,I,maj,4,4,0
+
 LastKiss,intro,A,E:maj,I,maj,1,4,0
 LastKiss,intro,A,C#:min,VI,min,2,4,0
 LastKiss,intro,A,A:maj,IV,maj,3,4,0
@@ -5804,6 +5849,7 @@ LastKiss,fadeout,,E:maj,I,maj,1,4,0
 LastKiss,fadeout,,C#:min,VI,min,2,4,0
 LastKiss,fadeout,,A:maj,IV,maj,3,4,0
 LastKiss,fadeout,,B:maj,V,maj,4,4,0
+
 SeasonsOfTheHeart,intro,A,C:maj,I,maj,1,4,0
 SeasonsOfTheHeart,intro,A,F:maj,IV,maj,2,4,0
 SeasonsOfTheHeart,intro,A,C:maj,I,maj,3,4,0
@@ -5876,6 +5922,7 @@ SeasonsOfTheHeart,coda,A,C:maj,I,maj,1,4,0
 SeasonsOfTheHeart,coda,A,F:maj,IV,maj,2,4,0
 SeasonsOfTheHeart,coda,A,C:maj,I,maj,3,4,0
 SeasonsOfTheHeart,coda,A,C:maj,I,maj,4,4,0
+
 GetTogether,intro,A,A:maj,I,maj,1,4,0
 GetTogether,intro,A,G:maj/9,bVII,maj/9,2,4,0
 GetTogether,intro,A,A:maj,I,maj,3,4,0
@@ -6001,6 +6048,7 @@ GetTogether,chorus,C,A:maj,I,maj,1,4,0
 GetTogether,chorus,C,A:maj,I,maj,2,4,0
 GetTogether,chorus,C,A:maj,I,maj,3,4,0
 GetTogether,chorus,C,A:maj,I,maj,4,4,0
+
 WithYouI'mBornAgain,intro,A',D:min9,I,min9,1,4,0
 WithYouI'mBornAgain,intro,A',C:maj6(9),bVII,maj6(9),2,4,0
 WithYouI'mBornAgain,intro,A',Bb:maj9,bVI,maj9,3,4,0
@@ -6099,6 +6147,7 @@ WithYouI'mBornAgain,chorus,A,Eb:maj,I,maj,5,5,0
 WithYouI'mBornAgain,chorus,A,Eb:maj,I,maj,1,3,0
 WithYouI'mBornAgain,chorus,A,Eb:maj,I,maj,2,3,0
 WithYouI'mBornAgain,chorus,A,Eb:maj,I,maj,3,3,0
+
 TheRose,intro,C,C:5,I,5,1,1,0
 TheRose,intro,C,C:5,I,5,1,1,0
 TheRose,intro,C,C:5,I,5,1,1,0
@@ -6167,6 +6216,7 @@ TheRose,verse,A,C:maj(9),I,maj(9),4,5,0
 TheRose,verse,A,C:maj(9),I,maj(9),5,5,0
 TheRose,verse,A,C:maj(9),I,maj(9),1,2,0
 TheRose,verse,A,C:maj,I,maj,2,2,0
+
 InMyRoom,intro,A,B:maj,I,maj,1,2,0
 InMyRoom,intro,A,G#:min7,VI,min7,1,2,0
 InMyRoom,intro,A,C#:min7,II,min7,2,2,0
@@ -6228,6 +6278,7 @@ InMyRoom,fadeout,,B:maj,I,maj,3,4,0
 InMyRoom,fadeout,,A:maj,bVII,maj,3,4,0
 InMyRoom,fadeout,,B:maj,I,maj,4,4,0
 InMyRoom,fadeout,,A:maj,bVII,maj,4,4,0
+
 LastKiss,intro,A,N,NonHarmonic,NonHarmonic,1,2,0
 LastKiss,intro,A,N,NonHarmonic,NonHarmonic,2,2,0
 LastKiss,intro,A,E:maj,I,maj,1,4,0
@@ -6312,6 +6363,7 @@ LastKiss,fadeout,,E:maj,I,maj,1,4,0
 LastKiss,fadeout,,C#:min,VI,min,2,4,0
 LastKiss,fadeout,,A:maj,IV,maj,3,4,0
 LastKiss,fadeout,,B:maj,V,maj,4,4,0
+
 RockyMountainHigh,intro,A',E:maj,I,maj,1,4,0
 RockyMountainHigh,intro,A',F#:min7,II,min7,2,4,0
 RockyMountainHigh,intro,A',A:maj,IV,maj,2,4,0
@@ -6489,6 +6541,7 @@ RockyMountainHigh,fadeout,,E:maj,I,maj,3,4,0
 RockyMountainHigh,fadeout,,F#:min7,II,min7,4,4,0
 RockyMountainHigh,fadeout,,A:maj,IV,maj,4,4,0
 RockyMountainHigh,fadeout,,B:sus4(b7),V,sus4(b7),4,4,0
+
 LoveComesQuickly,intro,A,B:5,I,5,1,4,0
 LoveComesQuickly,intro,A,B:5,I,5,2,4,0
 LoveComesQuickly,intro,A,B:5(b7),I,5(b7),3,4,0
@@ -6622,6 +6675,7 @@ LoveComesQuickly,fadeout,,F#:min/b3,V,min/b3,3,5,0
 LoveComesQuickly,fadeout,,B:min,I,min,4,5,0
 LoveComesQuickly,fadeout,,B:min7,I,min7,4,5,0
 LoveComesQuickly,fadeout,,G:maj/3,bVI,maj/3,5,5,0
+
 Jessie'sGirl,intro,A,D:5,I,5,1,2,0
 Jessie'sGirl,intro,A,A:5,V,5,1,2,0
 Jessie'sGirl,intro,A,B:5,VI,5,1,2,0
@@ -6862,6 +6916,7 @@ Jessie'sGirl,coda,D,D:maj,I,maj,2,3,0
 Jessie'sGirl,coda,D,G:maj,IV,maj,2,3,0
 Jessie'sGirl,coda,D,D:maj,I,maj,2,3,0
 Jessie'sGirl,coda,D,D:maj,I,maj,3,3,0
+
 "IRise,IFall",verse,A,E:maj,I,maj,1,4,0
 "IRise,IFall",verse,A,C#:min,VI,min,2,4,0
 "IRise,IFall",verse,A,A:maj,IV,maj,3,4,0
@@ -6935,6 +6990,7 @@ Jessie'sGirl,coda,D,D:maj,I,maj,3,3,0
 "IRise,IFall",verse,A',C#:min,VI,min,2,4,0
 "IRise,IFall",verse,A',E:maj,I,maj,3,4,0
 "IRise,IFall",verse,A',E:maj,I,maj,4,4,0
+
 IDon'tLoveYouAnymore,intro,A,N,NonHarmonic,NonHarmonic,1,4,0
 IDon'tLoveYouAnymore,intro,A,N,NonHarmonic,NonHarmonic,2,4,0
 IDon'tLoveYouAnymore,intro,A,N,NonHarmonic,NonHarmonic,3,4,0
@@ -7229,6 +7285,7 @@ IDon'tLoveYouAnymore,fadeout,,A:min/11,II,min/11,1,2,0
 IDon'tLoveYouAnymore,fadeout,,G:maj,I,maj,2,2,0
 IDon'tLoveYouAnymore,fadeout,,A:min,II,min,2,2,0
 IDon'tLoveYouAnymore,fadeout,,A:min/11,II,min/11,2,2,0
+
 Goin'Back,intro,A,E:maj,I,maj,1,4,0
 Goin'Back,intro,A,E:maj,I,maj,2,4,0
 Goin'Back,intro,A,E:maj,I,maj,3,4,0
@@ -7329,6 +7386,7 @@ Goin'Back,fadeout,,C#:min,VI,min,1,4,0
 Goin'Back,fadeout,,C#:min,VI,min,2,4,0
 Goin'Back,fadeout,,E:maj,I,maj,3,4,0
 Goin'Back,fadeout,,E:maj,I,maj,4,4,0
+
 Don'tTalkToStrangers,intro,A',G:min,bIII,min,1,1,0
 Don'tTalkToStrangers,intro,A',C#:1,VI,1,1,4,0
 Don'tTalkToStrangers,intro,A',"C#:sus4(b7,9)",VI,"sus4(b7,9)",1,4,0
@@ -7559,6 +7617,7 @@ Don'tTalkToStrangers,fadeout,,E:maj,I,maj,1,2,0
 Don'tTalkToStrangers,fadeout,,C#:min9,VI,min9,2,2,0
 Don'tTalkToStrangers,fadeout,,C#:min7,VI,min7,2,2,0
 Don'tTalkToStrangers,fadeout,,B:maj6,V,maj6,2,2,0
+
 YouCanCallMeAl,intro,A,F:maj,I,maj,1,4,0
 YouCanCallMeAl,intro,A,C:maj,V,maj,1,4,0
 YouCanCallMeAl,intro,A,Bb:maj,IV,maj,2,4,0
@@ -7855,6 +7914,7 @@ YouCanCallMeAl,fadeout,A,Bb:maj,IV,maj,2,3,0
 YouCanCallMeAl,fadeout,A,C:maj,V,maj,2,3,0
 YouCanCallMeAl,fadeout,A,F:maj,I,maj,3,3,0
 YouCanCallMeAl,fadeout,A,C:maj,V,maj,3,3,0
+
 Jump(forMyLove),intro,A,N,NonHarmonic,NonHarmonic,1,6,0
 Jump(forMyLove),intro,A,N,NonHarmonic,NonHarmonic,2,6,0
 Jump(forMyLove),intro,A,A:maj,I,maj,2,6,0
@@ -8113,6 +8173,7 @@ Jump(forMyLove),fadeout,,F:maj/3,I,maj/3,3,4,0
 Jump(forMyLove),fadeout,,Bb:maj,IV,maj,3,4,0
 Jump(forMyLove),fadeout,,C:maj/3,V,maj/3,4,4,0
 Jump(forMyLove),fadeout,,F:maj,I,maj,4,4,0
+
 I'vePassedThisWayBefore,intro,A,Eb:maj,IV,maj,1,1,0
 I'vePassedThisWayBefore,intro,A,F:maj,V,maj,1,1,0
 I'vePassedThisWayBefore,intro,A,Bb:maj,I,maj,1,2,0
@@ -8255,6 +8316,7 @@ I'vePassedThisWayBefore,fadeout,,Eb:min,II,min,3,4,0
 I'vePassedThisWayBefore,fadeout,,Gb:maj,IV,maj,4,4,0
 I'vePassedThisWayBefore,fadeout,,Ab:maj,V,maj,4,4,0
 I'vePassedThisWayBefore,fadeout,,Db:maj,I,maj,4,4,0
+
 LastKiss,intro,A,E:maj,I,maj,1,4,0
 LastKiss,intro,A,C#:min,VI,min,2,4,0
 LastKiss,intro,A,A:maj,IV,maj,3,4,0
@@ -8421,6 +8483,7 @@ LastKiss,fadeout,,E:maj,I,maj,1,4,0
 LastKiss,fadeout,,C#:min,VI,min,2,4,0
 LastKiss,fadeout,,A:maj,IV,maj,3,4,0
 LastKiss,fadeout,,B:maj,V,maj,4,4,0
+
 HumanNature,intro,C,G:maj(9),IV,maj(9),1,2,0
 HumanNature,intro,C,A:maj,V,maj,1,2,0
 HumanNature,intro,C,F:maj9,bIII,maj9,2,2,0
@@ -8623,6 +8686,7 @@ HumanNature,fadeout,,"Bb:maj6(7,#11)",bVI,"maj6(7,#11)",1,4,0
 HumanNature,fadeout,,"Bb:maj6(7,#11)",bVI,"maj6(7,#11)",2,4,0
 HumanNature,fadeout,,"Bb:maj6(7,#11)",bVI,"maj6(7,#11)",3,4,0
 HumanNature,fadeout,,"Bb:maj6(7,#11)",bVI,"maj6(7,#11)",4,4,0
+
 YouCanCallMeAl,intro,A,F:maj,I,maj,1,4,0
 YouCanCallMeAl,intro,A,C:maj,V,maj,1,4,0
 YouCanCallMeAl,intro,A,Bb:maj,IV,maj,2,4,0
@@ -8919,6 +8983,7 @@ YouCanCallMeAl,fadeout,A,Bb:maj,IV,maj,2,3,0
 YouCanCallMeAl,fadeout,A,C:maj,V,maj,2,3,0
 YouCanCallMeAl,fadeout,A,F:maj,I,maj,3,3,0
 YouCanCallMeAl,fadeout,A,C:maj,V,maj,3,3,0
+
 Jessie'sGirl,intro,A,D:5,I,5,1,2,0
 Jessie'sGirl,intro,A,A:5,V,5,1,2,0
 Jessie'sGirl,intro,A,B:5,VI,5,1,2,0
@@ -9159,6 +9224,7 @@ Jessie'sGirl,coda,D,D:maj,I,maj,2,3,0
 Jessie'sGirl,coda,D,G:maj,IV,maj,2,3,0
 Jessie'sGirl,coda,D,D:maj,I,maj,2,3,0
 Jessie'sGirl,coda,D,D:maj,I,maj,3,3,0
+
 EchoesOfLove,intro,A'',A:maj,I,maj,1,1,0
 EchoesOfLove,intro,A'',D:maj(9),IV,maj(9),1,4,0
 EchoesOfLove,intro,A'',E:sus4(b7),V,sus4(b7),1,4,0
@@ -9314,6 +9380,7 @@ EchoesOfLove,fadeout,,A:maj,I,maj,2,4,0
 EchoesOfLove,fadeout,,D:maj,IV,maj,3,4,0
 EchoesOfLove,fadeout,,E:sus4(b7),V,sus4(b7),3,4,0
 EchoesOfLove,fadeout,,A:maj,I,maj,4,4,0
+
 TheBattleOfNewOrleans,intro,A,A:maj,I,maj,1,5,0
 TheBattleOfNewOrleans,intro,A,D:maj,IV,maj,2,5,0
 TheBattleOfNewOrleans,intro,A,E:7,V,7,3,5,0
@@ -9436,6 +9503,7 @@ TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,1,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,2,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,3,4,0
 TheBattleOfNewOrleans,fadeout,,A:maj,I,maj,4,4,0
+
 TwoHearts,intro,A,C:maj,IV,maj,1,4,0
 TwoHearts,intro,A,C:maj,IV,maj,2,4,0
 TwoHearts,intro,A,D:maj,V,maj,3,4,0
@@ -9569,6 +9637,7 @@ TwoHearts,fadeout,A,C:maj,IV,maj,2,5,0
 TwoHearts,fadeout,A,D:maj,V,maj,3,5,0
 TwoHearts,fadeout,A,G:maj,I,maj,4,5,0
 TwoHearts,fadeout,A,C:maj,IV,maj,5,5,0
+
 PrettyInPink,intro,A,D:maj,I,maj,1,4,0
 PrettyInPink,intro,A,D:maj,I,maj,2,4,0
 PrettyInPink,intro,A,G:maj,IV,maj,3,4,0
@@ -9721,6 +9790,7 @@ PrettyInPink,fadeout,,D:maj,I,maj,1,4,0
 PrettyInPink,fadeout,,D:maj,I,maj,2,4,0
 PrettyInPink,fadeout,,G:maj,IV,maj,3,4,0
 PrettyInPink,fadeout,,A:maj,V,maj,4,4,0
+
 LastKiss,intro,A,N,NonHarmonic,NonHarmonic,1,2,0
 LastKiss,intro,A,N,NonHarmonic,NonHarmonic,2,2,0
 LastKiss,intro,A,E:maj,I,maj,1,4,0
@@ -9805,6 +9875,7 @@ LastKiss,fadeout,,E:maj,I,maj,1,4,0
 LastKiss,fadeout,,C#:min,VI,min,2,4,0
 LastKiss,fadeout,,A:maj,IV,maj,3,4,0
 LastKiss,fadeout,,B:maj,V,maj,4,4,0
+
 SleepWalk,intro,C,Db:maj,I,maj,1,4,0
 SleepWalk,intro,C,Bb:min,VI,min,2,4,0
 SleepWalk,intro,C,Gb:min,IV,min,3,4,0
@@ -9879,6 +9950,7 @@ SleepWalk,outro,J,Db:maj7,I,maj7,1,4,0
 SleepWalk,outro,J,Ab:7(b9),V,7(b9),2,4,0
 SleepWalk,outro,J,Db:maj13,I,maj13,3,4,0
 SleepWalk,outro,J,Db:maj13,I,maj13,4,4,0
+
 GetTogether,intro,A,A:maj,I,maj,1,4,0
 GetTogether,intro,A,G:maj/9,bVII,maj/9,2,4,0
 GetTogether,intro,A,A:maj,I,maj,3,4,0
@@ -10004,6 +10076,7 @@ GetTogether,chorus,C,A:maj,I,maj,1,4,0
 GetTogether,chorus,C,A:maj,I,maj,2,4,0
 GetTogether,chorus,C,A:maj,I,maj,3,4,0
 GetTogether,chorus,C,A:maj,I,maj,4,4,0
+
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,1,4,0
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,2,4,0
 DanceAway,intro,C,N,NonHarmonic,NonHarmonic,3,4,0
@@ -10119,6 +10192,7 @@ DanceAway,fadeout,,C:maj,VI,maj,4,7,0
 DanceAway,fadeout,,F:maj,II,maj,5,7,0
 DanceAway,fadeout,,D:min,VII,min,6,7,0
 DanceAway,fadeout,,Bb:maj,V,maj,7,7,0
+
 HandyMan,intro,A,Bb:maj,I,maj,1,4,0
 HandyMan,intro,A,G:min,VI,min,2,4,0
 HandyMan,intro,A,Bb:maj,I,maj,3,4,0
@@ -10190,6 +10264,7 @@ HandyMan,fadeout,,G:min,VI,min,4,4,0
 HandyMan,fadeout,,Bb:maj,I,maj,1,3,0
 HandyMan,fadeout,,G:min,VI,min,2,3,0
 HandyMan,fadeout,,Bb:maj,I,maj,3,3,0
+
 Getaway,intro,A,F:min,I,min,1,4,0
 Getaway,intro,A,F:min,I,min,2,4,0
 Getaway,intro,A,F:min,I,min,3,4,0
@@ -10362,6 +10437,7 @@ Getaway,fadeout,,F:7(#9),I,7(#9),1,2,0
 Getaway,fadeout,,F:7(#9),I,7(#9),2,2,0
 Getaway,fadeout,,Bb:min,IV,min,2,2,0
 Getaway,fadeout,,C:min,V,min,2,2,0
+
 TheRose,intro,C,C:5,I,5,1,1,0
 TheRose,intro,C,C:5,I,5,1,1,0
 TheRose,intro,C,C:5,I,5,1,1,0
@@ -10430,6 +10506,7 @@ TheRose,verse,A,C:maj(9),I,maj(9),4,5,0
 TheRose,verse,A,C:maj(9),I,maj(9),5,5,0
 TheRose,verse,A,C:maj(9),I,maj(9),1,2,0
 TheRose,verse,A,C:maj,I,maj,2,2,0
+
 WalkingInMemphis,intro,A,F:maj,IV,maj,1,4,0
 WalkingInMemphis,intro,A,G:5,V,5,1,4,0
 WalkingInMemphis,intro,A,C:5,I,5,2,4,0
