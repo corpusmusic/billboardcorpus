@@ -88,6 +88,7 @@ if __name__ == '__main__':
 	#Create csv files:
 
 	#For each cluster...
+	current_song = None
 	for cluster_id in clusters:
 		#First, open the input file
 		with open(ALL_DATA_FILE, 'rb') as csv_in:
@@ -98,10 +99,13 @@ if __name__ == '__main__':
 				#Finally, for each row in the input file...
 				for row in reader:
 					#...if there's valid data in the row...
-					if row:
+					# if row:
 						#...and if the row has data matching the current cluster...
-						if row[0] in clusters[cluster_id]:
-							#then write the data into the current cluster's output file.
-							writer.writerow(row)
+					if row and row[0] in clusters[cluster_id]:
+						#then write the data into the current cluster's output file.
+						if current_song != row[0] and current_song is not None:
+							writer.writerow([])
+						writer.writerow(row)
+						current_song = row[0]
 				print "Created cluster in file: " + str(len(clusters)) + OUTPUT_FILE_PREFIX + str(cluster_id + 1) + "of" + str(len(clusters)) + ".csv"
 	print "Done!"
