@@ -6,7 +6,7 @@ from readdata import read_data
 import csv
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
-for j in range(0,5):
+for j in range(0,4):
     z = ['4','4','4','4']
     t = ['1','2','3','4']
     def transition_probs_by_song(chord_lists):
