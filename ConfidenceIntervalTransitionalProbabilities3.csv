@@ -1,0 +1,13 @@
+ConfidenceIntervalTransitionalProbabilities3.csv,I,bII,II,bIII,III,IV,bV,V,bVI,VI,bVII,VII
+I,0.3577-0.4591,0.0002-0.0077,0.0283-0.079,0.0014-0.0294,-0.0009-0.0178,0.177-0.2604,-0.0005-0.0014,0.1113-0.192,0.0204-0.0685,0.0178-0.0592,0.025-0.0775,-0.0006-0.002
+bII,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+II,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+bIII,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+III,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+IV,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+bV,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+V,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+bVI,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+VI,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+bVII,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
+VII,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan,nan-nan
