@@ -17,7 +17,7 @@ import re, sys, csv
 
 #Default arguments for script.
 CLUSTER_GROUP_FILE = "output3_K_G8.kgg"
-ALL_DATA_FILE = "AlldataWithNonHarmonicsV5.csv"
+ALL_DATA_FILE = "AlldataWithNonHarmonics.csv"
 OUTPUT_FILE_PREFIX = "cluster"
 
 #Custom arguments.
