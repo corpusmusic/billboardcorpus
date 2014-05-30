@@ -4,6 +4,7 @@ from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
 import csv
+import sys
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
 
