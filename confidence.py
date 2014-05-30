@@ -87,9 +87,39 @@ def generate_tables(chunk):
         write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk) + ".csv")
         #write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
 	
+def generate_zeroth_order_tables(chunk):
+#assume that the format is I, bII, II ... VII-VII 
+
+	meanTable = []
+	intervalTable = []
+
+	disDict = load_csv('output0th%.csv')
+	for key in range(13):
+		if key != 0:
+			data = [float(x) for x in disDict[key][1:]]
+			data = data[chunk*730: (chunk+1)*730]	
+	
+			con = mean_confidence_interval(data)
+
+			meanTable.append(round(con[0],4))
+			intervalTable.append(str(round(con[1],4)) + "-" + str(round(con[2],4)) )
+		
+	meanTable = [meanTable[i:i+12] for i in xrange(0,len(meanTable),12)]
+	intervalTable = [intervalTable[i:i+12] for i in xrange(0,len(intervalTable),12)]
+
+	write_csv(meanTable,"meanChordOccurrenceProbabilities" + str(chunk) +".csv")
+        write_csv(intervalTable, "ConfidenceIntervalChordOccurrenceProbabilities" + str(chunk) + ".csv")
+
+
+generate_zeroth_order_tables(0)
+generate_zeroth_order_tables(1)
+generate_zeroth_order_tables(2)
+generate_zeroth_order_tables(3)
+	
 		
 generate_tables(0)
 generate_tables(1)
 generate_tables(2)
 generate_tables(3)
+
 

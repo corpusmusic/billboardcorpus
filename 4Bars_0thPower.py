@@ -64,7 +64,7 @@ for j in range(0,4):
 	    return probs
 
     def write_csv(probabilities):
-		with open('output0th%.csv', 'w') as csvfile:
+		with open('output0th%.csv', 'a') as csvfile:
 			writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 			for song_name, probs in transition_probs.items():
 
