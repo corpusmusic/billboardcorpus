@@ -28,6 +28,8 @@ def load_csv(filename):
 			for index,value in enumerate(valuesList):
 				if writeBoolList[index]:
 					transDict[index].append(value)
+				else:
+					transDict[index].append(-1)
 		return transDict
 
 #look at zeros vs non zeros 
@@ -66,26 +68,18 @@ def generate_tables(chunk):
 		if key != 0:
 			data = [float(x) for x in disDict[key][1:]]
 			data = data[chunk*730: (chunk+1)*730]	
-	
-			datanozeros = filter(lambda x: x != 0, data)
 			
+			data = filter(lambda x: x != -1, data)
 			con = mean_confidence_interval(data)
-			conNoZeros = mean_confidence_interval(datanozeros)
 
 			meanTable.append(round(con[0],4))
-			meanTableNoZeros.append(round(conNoZeros[0],4))
 			intervalTable.append(str(round(con[1],4)) + "-" + str(round(con[2],4)) )
-			intervalTableNoZeros.append(str(round(conNoZeros[1],4)) + "-" + str(round(conNoZeros[2],4)) )
 		
 	meanTable = [meanTable[i:i+12] for i in xrange(0,len(meanTable),12)]
-	meanTableNoZeros = [meanTableNoZeros[i:i+12] for i in xrange(0,len(meanTableNoZeros),12)]
 	intervalTable = [intervalTable[i:i+12] for i in xrange(0,len(intervalTable),12)]
-	intervalTableNoZeros = [intervalTableNoZeros[i:i+12] for i in xrange(0,len(intervalTableNoZeros),12)]
 
 	write_csv(meanTable,"meanTransistionProbabilities" + str(chunk) +".csv")
-	#write_csv(meanTableNoZeros, "MeanTransitionProbabilitiesNoZero" + str(chunk) +".csv")
         write_csv(intervalTable, "ConfidenceIntervalTransitionalProbabilities" + str(chunk) + ".csv")
-        #write_csv(intervalTableNoZeros, "ConfidenceIntervalTransitionalProbabilitiesNoZero" + str(chunk))
 	
 def generate_zeroth_order_tables(chunk):
 #assume that the format is I, bII, II ... VII-VII 
@@ -98,7 +92,8 @@ def generate_zeroth_order_tables(chunk):
 		if key != 0:
 			data = [float(x) for x in disDict[key][1:]]
 			data = data[chunk*730: (chunk+1)*730]	
-	
+
+                        data = filter(lambda x: x != -1, data)	
 			con = mean_confidence_interval(data)
 
 			meanTable.append(round(con[0],4))
