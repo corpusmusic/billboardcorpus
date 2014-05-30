@@ -9,6 +9,7 @@ from __future__ import division
 from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
+import sys
 
 SMOOTHER = 0.0001
 
@@ -103,7 +104,11 @@ def viterbi(obs, states, start_p, trans_p, emit_p):
     return (prob, path[state])
 
 if __name__ == '__main__':
-    datafile = 'example.csv'
+    try:
+        datafile = sys.argv[1]
+    except:
+        datafile = 'AllDataWithNonHarmonics.csv'
+
     headers = ['module', 'root', 'bar_of_phrase', 'letter', 'bars_per_phrase', 'song_name']
     data = read_data(datafile, headers)
     transition_probs, emission_probs, initial_probs, states = get_probabilities(data)

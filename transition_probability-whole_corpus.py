@@ -3,6 +3,7 @@ from __future__ import division
 from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
+import sys
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
 
@@ -31,7 +32,11 @@ def get_transition_probs(chord_counts, transition_counts):
     return probs
 
 if __name__ == '__main__':
-    datafile = 'AlldataWithNonHarmonicsV2.csv'
+    try:
+        datafile = sys.argv[1]
+    except:
+        datafile = 'AlldataWithNonHarmonics.csv'
+
     headers = ['root']
     data = read_data(datafile, headers)
     chord_counts, transition_counts = get_overall_counts(data)

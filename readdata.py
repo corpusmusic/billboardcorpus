@@ -8,9 +8,6 @@ import csv
 
 CSV_COLUMNS = ['song_name', 'module', 'letter', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase', 'has_arrow']
 
-# CSV_COLUMNS = ['song_name', 'letter', 'module', 'full', 'root', 'quality', 'bar_of_phrase', 'bars_per_phrase', 'has_arrow']
-
-
 def refine_form(song_list, has_chorus):
     """
     Implement some transformations on the module data from the corpus.

@@ -3,11 +3,13 @@ from __future__ import division
 from collections import defaultdict
 from operator import itemgetter
 from readdata import read_data
+import sys
 
 RN = ['I', 'bII', 'II', 'bIII', 'III', 'IV', 'bV', 'V', 'bVI', 'VI', 'bVII', 'VII', 'NonHarmonic']
+
 for j in range(0,16):
     z = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','16','17']
-   
+
     def get_overall_counts(chord_lists):
         """Return dictionaries with individual chord counts and transition counts."""
         chord_counts = defaultdict(lambda: 0)
@@ -34,8 +36,11 @@ for j in range(0,16):
         return probs
 
     if __name__ == '__main__':
-        datafile = 'AlldataWithNonHarmonics.csv'
-        headers = ['root']
+        try:
+            datafile = sys.argv[1]
+        except:
+            datafile = 'AlldataWithNonHarmonics.csv'
+
         data = read_data(datafile)
         chord_counts, transition_counts = get_overall_counts(data)
         transition_probs = get_transition_probs(chord_counts, transition_counts)
