@@ -63,7 +63,7 @@ def generate_tables(chunk):
 	meanTableNoZeros = []
 	intervalTableNoZeros = []
 
-	disDict = load_csv('outputeachsongperbar.csv')
+	disDict = load_csv('output.csv')
 	for key in range(145):
 		if key != 0:
 			data = [float(x) for x in disDict[key][1:]]
@@ -106,15 +106,15 @@ def generate_zeroth_order_tables(chunk):
         write_csv(intervalTable, "ConfidenceIntervalChordOccurrenceProbabilities" + str(chunk) + ".csv")
 
 
-generate_zeroth_order_tables(0)
-generate_zeroth_order_tables(1)
-generate_zeroth_order_tables(2)
-generate_zeroth_order_tables(3)
+#generate_zeroth_order_tables(0)
+#generate_zeroth_order_tables(1)
+#generate_zeroth_order_tables(2)
+#generate_zeroth_order_tables(3)
 	
 		
 generate_tables(0)
-generate_tables(1)
-generate_tables(2)
-generate_tables(3)
+#generate_tables(1)
+#generate_tables(2)
+#generate_tables(3)
 
 
